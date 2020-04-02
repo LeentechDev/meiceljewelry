@@ -1,0 +1,88 @@
+<!-- /templates/list-collections.liquid -->
+{% comment %}
+
+This page represents the /collections and /products pages.
+It is an optional, but highly recommended, template for your theme.
+
+More info:
+- http://docs.shopify.com/manual/configuration/store-customization/taking-control-of-collections-listing
+
+{% endcomment %}
+
+
+
+{% comment %}
+Loop through each collection, except 'frontpage'
+{% endcomment %}
+
+
+<div class="slide-collection-all">
+  {% include 'ciloe-banner' %}
+  <div class="container container-240">
+    <div class="list-category">
+      {% include 'collection-grid-item'%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "List collections",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+      "type": "header",
+      "content": "Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_banner",
+      "label": "Image banner",
+      "info": "1398x316px recommended"
+    },
+    {
+      "id": "url_banner",
+      "type": "url",
+      "default": "/collections/all",
+      "label": "Banner link"
+    },
+    {
+      "type": "header",
+      "content": "Text Banner"
+    },
+	{
+      "type": "select",
+        "id": "local_text",
+        "label": "Position Text",
+        "default": "center",
+        "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Collections title"
+    },
+    {
+      "type": "text",
+      "id": "title_page",
+      "label": "Title page",
+      "default": "Collections"
+    }
+  ]
+  }
+{% endschema %}

@@ -1,0 +1,67 @@
+<div class="topbar topbar-v7">
+  <div class="container container-240">
+    <div class="row flex">
+      <div class="col-lg-4 col-md-4 hidden-sm hidden-xs flex-left">
+        <div class="topbar-left topbar-left-v7">
+          <div class="element element_v7 hidden-xs hidden-sm">
+            <a href="{{settings.topbar_text5_url}}">{{settings.email-404}} </a>
+          </div>
+          {% if settings.hdv4_enable_language_currency %}
+          <div class="language_currency">
+            <div class="element element_v7 element-leaguage">
+              <a id="label2" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span>{{settings.language_default}}</span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="label2">
+                {%for i in (1..6)%}
+                {%capture _enable%}language{{i}}_enable{%endcapture%}
+                {%capture _text%}language{{i}}_text{%endcapture%}
+                {%capture _url%}Language{{i}}_url{%endcapture%}
+
+                {%assign enable = settings[_enable]%}
+                {%assign text = settings[_text]%}
+                {%assign url = settings[_url]%}
+                <li><a href="{{url}}" title="{{text}}">{{text}}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="element element_v7 element-currency">
+              <a id="label3" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span>{{shop.currency}}</span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="label3">
+                {% assign supported = settings.supported_currencies | split: ' ' %}
+                {% for c in supported %}
+                <li><a data-currency="{{c}}">{{c}}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <div class="topbar-center">
+          <div class="hidden-xs hidden-sm">
+            <span class="">{{settings.topbar_text4_center}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 flex-right">
+        <div class="topbar-right">
+          <div class="element element_v7 hidden-xs hidden-sm">
+            <a href="{{settings.topbar_text5_url}}">{{settings.topbar_text5}} </a>
+          </div>
+          <div class="element element_v7 hidden-xs hidden-sm">
+            <a href="{{settings.topbar_text4_url}}">
+              <span>{{settings.topbar_text4}}</span>
+            </a>
+          </div>
+          <div class="element element_v7 hidden-xs hidden-sm" style="padding-right: 0;">
+            <a href="{{settings.topbar_text3_url}}">{{settings.topbar_text3}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

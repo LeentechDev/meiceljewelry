@@ -1,0 +1,48 @@
+------------  VERSION 1.0.3  ------------
+- Update: style improvements for all 8 Homepage
+- Update: improvements feature swatch color
+
+------------  VERSION 1.0.2  ------------
+- Remove: HTML form (wrong) in the review tab
+- Remove: 7 page templates that are not in the theme
+- Update: improve the style of the review tab (*on Mobile)
+- Update: improve style (content) of the description & summary
+- Update: feature swatch color
+- Update: enable/disable feature social share
+- Update: enable/disable & edit content, URL of the dynamic checkout
+- Update: the style of the cart page (*on Mobile)
+- Update: the style of the login page
+- Update: the style of the register page
+- Update: enable/disable any section in the Contact page
+- Update: the style of the list collections page
+- Update: add an action for subscribe form of the footer
+- Update: the style of the subscribe form (*on Footer)
+- Update: enable/disable multi-languages & multi-currency (*on Header)
+- Update: SVG logo for the Header
+- Update: change the main color (green) in Customize
+- Fix: the style of the section product tab
+- Fix: the style for the large device (2K, 4K, 5K, 8K...)
+- Fix: video responsive (description product & content post)
+
+------------  VERSION 1.0.1  ------------
+- Fix: Layout collection page (broken, overlap) 
+- Fix: Header collection page (overlap when without the image background) 
+- Fix: Product detail page (overlap when using different headers) 
+- Fix: Product image hover/flip (overlap when using .png transparent images) 
+- Fix: Mega menu does not work (when there is a drop down menu) 
+- Change: "Regiter" to "Register" 
+- Fix Ajax minicart (display HTML product price)
+- Fix Add to cart popup (*on Mobile)
+- Fix Sticky add to cart (*on Mobile)
+- Fix Search text (*on Mobile)
+- Fix Quickview popup (*on Mobile)
+- Update: Edit social for Footer v2, Footer v3, Footer v4 in Customize
+- Update megamenu
+- Update Buy on Amazon
+- Update Bundle
+- Update collection page template
+- Update Filter Sort by
+- Update Filter by Color
+
+------------  VERSION 1.0.0  ------------
+! Initial Release
