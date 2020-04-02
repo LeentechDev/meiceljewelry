@@ -1,4 +1,5 @@
 <header id="header" class="header-v2 delay05 {% if settings.enable_fix_hdv2 %}fixed{% endif %}">
+  {% if template.name contains 'index' %}{%include 'topbar_v1'%}{% endif %}
   <div class="container">
     <div class="row flex">
       <div class="hidden-lg hidden-md col-sm-4 col-xs-4" style="padding-top:27px;">
@@ -27,7 +28,7 @@
         <form method="get" class="searchform relative" action="/search" role="search">
           <label class="sr-only"  >search</label>
           <input type="hidden" name="type" value="product">
-          <input type="text" id="engo_autocomplate" value="{{ search.terms | escape }}" autocomplete="off" placeholder="ENTER KEYWORDS..." aria-label="{{ 'general.search.placeholder' | t }}" name="q" />
+          <input type="text" id="engo_autocomplate" value="{{ search.terms | escape }}" autocomplete="off" placeholder="Search for keywords" aria-label="{{ 'general.search.placeholder' | t }}" name="q" />
           <button type="button" class="submit absolute"><i class="{{ settings.icon-search }} fz-16" aria-hidden="true"></i></button>
         </form>
       </div>
@@ -47,9 +48,9 @@
           </a>
           {% endif %}
         </div>
-        <div class="hidden-sm hidden-xs flex center menu-header-v2">
+        <!-- <div class="hidden-sm hidden-xs flex center menu-header-v2">
           {% include 'ciloe-horizon-menu' %}
-        </div>
+        </div> -->
       </div>
       <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 text-right icon-main">
         {% if settings.hdv2_enable_language_currency %}
@@ -148,7 +149,11 @@
 
       </div>
     </div>
-
+    <div class="row" style="padding-bottom: 5px;">
+      <div class="hidden-sm hidden-xs flex center menu-header-v2">
+        {% include 'ciloe-horizon-menu' %}
+      </div>
+    </div>
   </div>
 </header>
 <style>
