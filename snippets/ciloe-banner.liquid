@@ -1,13 +1,21 @@
 <div class="container-fluid  relative banner_page margin_bottom_20 {% if template.name contains 'collection' %} hidden-xs {% endif %}">
   <div class="row">
-    <a href="{{section.settings.url_banner}}" class="effect_img2">
+    <!-- <a href="{{section.settings.url_banner}}" class="effect_img2">
       {% if section.settings.img_banner != blank %}
       <img src="{{section.settings.img_banner | img_url:'master'}}" class="img-responsive">
       {% endif %}
-    </a>
+    </a> -->
+    <!-- {% if section.settings.img_banner != blank %}
+      <img src="{{section.settings.img_banner | img_url:'master'}}" class="img-responsive">
+    {% endif %} -->
+    <div style="width: 100%;height: 50vh;">
+      {% if collection.image.src != blank %}
+       <div style="background-image: url('{{ collection.image.src | collection_img_url: '1920x1080' }}');width:100%;height:100%;display: table;background-size: cover;background-position: center center;background-repeat: no-repeat;"></div>
+      {% endif %} 
+    </div>
   </div>
   <div class="{% if section.settings.img_banner != blank %}absolute text_banner{% endif %}">
-    <h1 class="margin_bottom_20 {% if section.settings.local_text == 'left' %} text-left {% elsif section.settings.local_text == 'center' %} text-center {% elsif section.settings.local_text == 'right' %} text-right {% endif %}">{{section.settings.title_page}}</h1>
+    <h1 class="margin_bottom_20 {% if section.settings.local_text == 'left' %} text-left {% elsif section.settings.local_text == 'center' %} text-center {% elsif section.settings.local_text == 'right' %} text-right {% endif %}">{{collection.title}}</h1>
     <div class=" {% if section.settings.local_text == 'left' %} text-left {% elsif section.settings.local_text == 'center' %} text-center {% elsif section.settings.local_text == 'right' %} text-right {% endif %}">
     	{% include 'breadcrumb' %}
     </div>

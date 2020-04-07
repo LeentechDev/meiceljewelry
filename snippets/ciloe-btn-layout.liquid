@@ -6,24 +6,6 @@
          <h4 class="">{{ collection.products_count }} products <span>{{section.settings.available_button}}</span></h4>
       </div>
       <div class="col-lg-3 col-md-3 hidden-sm hidden-xs btn_function left ">
-        <div class="wrap-filter-sorting">
-          <div class="dropdown">
-            <button class="dropdown-toggle text-left" data-toggle="dropdown" aria-expanded="false">
-              {{ 'collections.sorting.title' | t }}
-              <span class="dropdown-label">{{ 'collections.sorting.featured' | t }}</span>
-            </button>
-            <ul class="dropdown-menu">
-              <li><a href="manual">{{ 'collections.sorting.featured' | t }}</a></li>   
-              <li><a href="best-selling">{{ 'collections.sorting.best_selling' | t }}</a></li>
-              <li><a href="title-ascending">{{ 'collections.sorting.az' | t }}</a></li>
-              <li><a href="title-descending">{{ 'collections.sorting.za' | t }}</a></li>
-              <li><a href="price-descending">{{ 'collections.sorting.price_descending' | t }}</a></li>
-              <li><a href="price-ascending">{{ 'collections.sorting.price_ascending' | t }}</a></li>
-              <li><a href="created-ascending">{{ 'collections.sorting.date_ascending' | t }}</a></li>
-              <li><a href="created-descending">{{ 'collections.sorting.date_descending' | t }}</a></li>
-            </ul>
-          </div>
-        </div>
       </div>
       {% comment %}
     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 btn_function text-center ">
@@ -56,15 +38,28 @@
     </div>
        {% endcomment %}
 <!--      -->
-    <div class="col-lg-2 col-md-2 hidden-sm hidden-xs btn_function gr_btn_product_size">
-      <p>See: </p>
-      <button class="products-size size_3 delay03">3</button>
-      <button class="products-size size_4 delay03 active">4</button>
-      <button class="products-size size_5 delay03">5</button>
+    <div class="col-lg-3 col-md-3 btn_function left">
+      <div class="wrap-filter-sorting">
+        <div class="dropdown">
+          <button class="dropdown-toggle text-left" data-toggle="dropdown" aria-expanded="false">
+            <!-- {{ 'collections.sorting.title' | t }} -->Sort by:
+            <span class="dropdown-label"> {{ 'collections.sorting.featured' | t }}</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="manual">{{ 'collections.sorting.featured' | t }}</a></li>   
+            <li><a href="best-selling">{{ 'collections.sorting.best_selling' | t }}</a></li>
+            <li><a href="title-ascending">{{ 'collections.sorting.az' | t }}</a></li>
+            <li><a href="title-descending">{{ 'collections.sorting.za' | t }}</a></li>
+            <li><a href="price-descending">{{ 'collections.sorting.price_descending' | t }}</a></li>
+            <li><a href="price-ascending">{{ 'collections.sorting.price_ascending' | t }}</a></li>
+            <li><a href="created-ascending">{{ 'collections.sorting.date_ascending' | t }}</a></li>
+            <li><a href="created-descending">{{ 'collections.sorting.date_descending' | t }}</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
           <div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 btn_function text-center filter-button ">
-      	<h4  class="btn_filter_full" data-click-state="0">{{section.settings.icon_filter}}</h4>
-
+        <h4 class="btn_filter_full" data-click-state="0"><img src="{{'filter.png'| asset_url}}" alt="filter" style="margin-right: 5px;">{{section.settings.icon_filter}}</h4>
     </div>
     </div>
     <div class="filter_full col-md-12 over-hidden delay05 engoj-collection-sidebar">

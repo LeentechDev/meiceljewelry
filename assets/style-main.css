@@ -5400,7 +5400,7 @@ h1,h2,h3,h4,h5{
     padding: 0 150px !important;
   }
   .footer-v4 .content-2 form{
-    width:90% !important;
+    width:100% !important;
   }
 }
 @media (max-width: 1024px){
