@@ -45,9 +45,12 @@
         <h1 class="title-fv3 margin_bottom_30 fw-600">{{settings.title_fv4_2}}</h1>
         {% assign footer_menu_2 = settings.fv4_menu_2 %}
         <ul class="menu_fv3_2">
-          {% for link in linklists[footer_menu_2].links %}
+          <!-- {% for link in linklists[footer_menu_2].links %}
           <li><a href="{{ link.url }}" title="{{ link.title }}" class="delay03">{{ link.title }}</a></li>
-          {%endfor%}
+          {%endfor%} -->
+          <li>34 Wilson Street West Greenhills, San Juan</li>
+          <li class="margin_top_20 margin_bottom_20">63 920 921 6837 / +63 918 925 8847 +63 922 825 8847 (02) 8 725 8311 / (02) 8 879 3492</li>
+          <li>inquire@meiceljewelry.com</li>
         </ul>
       </div>
       {% if settings.newsletter_form_action != blank %}
@@ -60,11 +63,17 @@
         <p>{{settings.des_fv4}}</p>
         <form action="{{ form_action }}" method="post" name="mc-embedded-subscribe-form" target="_blank"  class="subscible-form relative">
           <input class="engoc-input-form" type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{settings.input_placeholder_footer4}}" name="EMAIL" aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}" autocorrect="off" autocapitalize="off">
-          <button type="submit" class=" absolute"  name="subscribe"><i class="{{settings.icon-submit-footer4}}"></i></button>
+          <!-- <button type="submit" class=" absolute"  name="subscribe"><i class="{{settings.icon-submit-footer4}}"></i></button> -->
+          <button type="submit" class=""  name="subscribe">Subscribe</button>
         </form>
       </div>
 
     </div>
-    
+    <div class="bottom-footer">
+      <div class="bottom-holder">
+        <div class="btm-footer-left">&copy; {{ 'now' | date: "%Y" }} <a href="">Meicel Jewelry</a>. All Rights Reserved.</div>
+        <div class="btm-footer-right">Powered by <strong><a href="http://leentechsystems.com/">LEENTech Network Solutions, Inc.</a></strong></div>
+      </div>
+    </div>
   </div>
 </footer>

@@ -1,17 +1,23 @@
 <div data-section-id="{{ section.id }}" data-section-type="slide-v1" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
 
-  <div class="container banner_minimal margin_bottom_50 space_top_50 relative">
-
+  <!-- <div class="container banner_minimal margin_bottom_50 space_top_50 relative"> -->
+  <div class="banner_minimal relative">
     <div class=" flex">
       {% if section.blocks.size > 0 %}
       {% for block in section.blocks %}
       <div class="relative content-banner">
-        <a href="{{block.settings.url_1}}" class="inline-block relative overlay-banner over-hidden">
+        <!-- <a href="{{block.settings.url_1}}" class="inline-block relative overlay-banner over-hidden">
           <img src="{{block.settings.img_1 | img_url:'master'}}" class="img-responsive hover-zoom-out">
-        </a>
+        </a> -->
+        <img src="{{block.settings.img_1 | img_url:'master'}}" class="img-responsive">
         <div class="absolute text-banner">
-          <p class="lt-1 fw-600 {% if block.settings.local_text_1 == 'center' %} text-center {% elsif block.settings.local_text_1 == 'left' %} text-left {% elsif block.settings.local_text_1 == 'right' %} text-right {% endif %}">{{block.settings.text-top-1}}</p>
+          <div style="margin: 0 auto; width: 500px">
           <h1 class="{% if block.settings.local_text_1 == 'center' %} text-center {% elsif block.settings.local_text_1 == 'left' %} text-left {% elsif block.settings.local_text_1 == 'right' %} text-right {% endif %} capital margin_bottom_10">{{block.settings.text-mid-1}}</h1>
+          <p class="lt-1 {% if block.settings.local_text_1 == 'center' %} text-center {% elsif block.settings.local_text_1 == 'left' %} text-left {% elsif block.settings.local_text_1 == 'right' %} text-right {% endif %}" style="color: #000000;">{{block.settings.text-top-1}}</p>
+          </div>
+          <div class="text-center" style="margin-top: 60px;">
+            <a href="{{section.settings.url}}" class="btn_banner lt-2 delay03">Make an appointment with us</a>
+          </div>
         </div>
       </div>
       {% endfor %}
@@ -51,7 +57,7 @@
     color:{{section.settings.color_text2}};
   }
   .banner_minimal .text-banner p{
-    margin-bottom:25px;
+    margin:25px 0;
     font-size:12px;
     color:{{section.settings.color_text}};
 
@@ -187,16 +193,29 @@
           },
           {
             "type": "text",
-          	"id": "text-top-1",
-          	"label": "Text",
-			"default": "Sale up to 50%"
-          },
-          {
-            "type": "text",
           	"id": "text-mid-1",
           	"label": "Title",
 			"default": "arm chair"
+          },
+          {
+            "type": "text",
+          	"id": "text-top-1",
+          	"label": "Text",
+			"default": "Sale up to 50%"
           }
+          ,
+	{
+      "type": "url",
+      "id": "url",
+      "label": "URL button",
+      "default": "/collections/all"
+    },
+    {
+      "type": "text",
+      "id": "btn_name",
+      "label": "Button name",
+      "default": "SHOP NOW"
+    }
 ]
 }
 ],
