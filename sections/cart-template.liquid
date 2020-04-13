@@ -16,17 +16,20 @@ For info on test orders:
 
 
 <!--main content-->
-  {% include 'ciloe-banner' %}
         <div class="container container-240">
+          <div class="margin_top_20">
+            {% include 'breadcrumb' %}
+          </div>
             <div class="checkout">
               
                 {% if cart.item_count > 0 %}
                 <form action="/cart" method="post" novalidate>
 		<div class="row">
+          <h3 class="margin_top_20 margin_bottom_20" style="padding-left: 20px;">{{ 'cart.general.title' | t }}</h3>
             <div class="col-md-8 col-sm-12 col-xs-12">
                 <div class="shopping-cart bd-7">
                     <div class="cmt-title text-center abs">
-                        <h3 class="page-title v2">{{ 'cart.general.title' | t }}</h3>
+                        <!-- <h3 class="page-title v2">{{ 'cart.general.title' | t }}</h3> -->
                     </div>
                     <div class="table-responsive">
                       <table class="table cart-table">
@@ -105,16 +108,17 @@ For info on test orders:
             <div class="col-md-4 col-sm-12 col-xs-12">
                 <div class="cart-total bd-7">
                     <div class="cmt-title text-center abs">
-                        <h3 class="page-title v3">{{ 'cart.label.cart_total' | t }}</h3>
+                        <!-- <h3 class="page-title v3">{{ 'cart.label.cart_total' | t }}</h3> -->
                     </div>
                   	<div class="cart-total-bottom pp-checkout align-center v-center">
                       	{% if section.settings.cart_notes_enable %}
-                      	<h3 class="cate-title">{{ 'cart.label.cart_note' | t }}</h3>
+                      	<!-- <h3 class="cate-title">{{ 'cart.label.cart_note' | t }}</h3> -->
                         <div class="contact-form coupon">
 						
                           <div class=" medium-up--one-half ">
-                              <label for="CartSpecialInstructions" class="cart-note cart-note_text_label small--text-center">{{ 'cart.general.note' | t }}</label>
-                              <textarea rows="6" name="note" id="CartSpecialInstructions" class="cart-note__input form-control note--input">{{ cart.note }}</textarea>
+                              <!-- <label for="CartSpecialInstructions" class="cart-note cart-note_text_label">{{ 'cart.general.note' | t }}</label> -->
+                              <p class="margin_top_10 margin_bottom_10" style="text-align: left; font-weight: 500; color: #7B7B7B;">{{ 'cart.general.note' | t }}</p>
+                              <textarea rows="6" name="note" id="CartSpecialInstructions" class="cart-note__input form-control note--input" placeholder="Type here...">{{ cart.note }}</textarea>
                           </div>
                         </div>
                       	{%endif %}
@@ -128,6 +132,7 @@ For info on test orders:
                                 </tr>
                             </tbody>
                         </table>
+                        <p class="margin_top_10 margin_bottom_10" style="width: 50%; text-align: right;margin-left: 40%;color: #7B7B7B;">Shipping & taxes calculated at checkout</p>
                     </div>
                     <div class="cart-total-bottom">
                         <a href="/checkout" class="btn-back btn-checkout">{{ 'cart.general.checkout' | t }}</a>

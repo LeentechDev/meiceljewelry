@@ -1,5 +1,5 @@
 <header id="header" class="header-v2 delay05 {% if settings.enable_fix_hdv2 %}fixed{% endif %}">
-  {% if template.name contains 'index' %}{%include 'topbar_v1'%}{% endif %}
+  {%include 'topbar_v1'%}
   <div class="container">
     <div class="row flex">
       <div class="hidden-lg hidden-md col-sm-4 col-xs-4" style="padding-top:27px;">
@@ -113,7 +113,7 @@
           {% endif %}
         </a>
         {% else %}
-        <a href="#login_form" class="delay03 inline-block hidden-sm hidden-xs" id="btn-login">
+        <a href="/account/login" class="delay03 inline-block hidden-sm hidden-xs" id="btn-login">
           {% if settings.style_icon_login == "icon" %}
           {% if settings.icon-login == blank %}
           <i class="zoa-icon-user"></i>
@@ -122,7 +122,7 @@
           {% endif %}
           {% else %}
           {% if settings.image_login == blank %}
-          <img src="{{'iconlogin.png' | asset_url}}" class="img-responsive">
+          <img src="{{'iconlogin2.png' | asset_url}}" class="img-responsive">
           {% else %}
           <img src="{{settings.image_login | img_url:'master'}}" class="img-responsive">
           {% endif %}
@@ -139,7 +139,7 @@
           {% endif %}S
           {% else %}
           {% if settings.image_cart == blank %}
-          <img src="{{'iconcar.png' | asset_url}}" class="img-responsive">
+          <img src="{{'iconcar2.png' | asset_url}}" class="img-responsive">
           {% else %}
           <img src="{{settings.image_cart | img_url:'master'}}" class="img-responsive">
           {% endif %}

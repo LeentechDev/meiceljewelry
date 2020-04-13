@@ -3,7 +3,7 @@
   <div class="cart-list enj-minicart-ajax">
     <div class="cart-list-heading">
       <span class="close-menu-mobile js-close"></span>
-      <h3 class="cart-title">your cart</h3>
+      <h4 class="cart-title">Your Cart</h4>
       <span class="minicart-number-items enj-cartcount">{{ cart.item_count }}</span>
     </div>
     {% if cart.item_count > 0 %}
@@ -16,10 +16,13 @@
           </div>
           <div class="product-details">
             <div class="inner-left">
-              <div class="product-name"><a href="{{item.url}}">{{ item.title}}</a></div>
+              <div class="product-name"><a href="{{item.url}}">{{ item.product.title}}</a></div>
               <div class="product-price"><span>{{ item.price | money }}</span></div>
-              <div class="product-qtt">
+              <!-- <div class="product-qtt">
                 QTY : {{ item.quantity }}
+              </div> -->
+              <div style="float: left;">
+                {{ item.variant.title}}
               </div>
             </div>
           </div>
