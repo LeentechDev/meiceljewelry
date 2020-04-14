@@ -21,7 +21,10 @@
       </div>
     </div>
     <div class="account-login">
-      <div class="account-input-holder">
+      <div class="account-input-holder CustomerLoginForm">
+        <div class="note form-success hide">
+          {{ 'customer.recover_password.success' | t }}
+        </div>
         <h2>Login</h2>
         <p class="margin_top_20">Sign in your account.</p>
         {% form 'customer_login' %}
@@ -38,18 +41,41 @@
                   <button type="submit" class="account-btn-submit">
                       {{ 'customer.login.log_in' | t }}
                   </button>
-
+                  
               </div>
-              <!-- {% if form.password_needed %}
+              {% if form.password_needed %}
                 <a href="#recover" class="btn-lostpwd spc RecoverPassword">Lost your password?</a>
-              {% endif %} -->
+              {% endif %}
 
             </div>
             </div>
           {% endform %}
+          
+      </div>
+      <div class="account-recovery-pass RecoverPasswordForm" style="display:none">
+            <h2 class="margin_bottom_20">Recover Account</h2>
+              <p>{{ 'customer.recover_password.subtext' | t }}</p>
+            <div class="form-login">
+              {% form 'recover_customer_password' %}
+  
+              {{ form.errors | default_errors }}
+  
+              {% comment %}
+              Add a hidden span to indicate the form was submitted succesfully.
+              {% endcomment %}
+              {% if form.posted_successfully? %}
+              <span class="hide reset-password-success"></span>
+              {% endif %}
+              <div class="form-group" style="width: 400px;margin: 20px auto;">
+                <input type="email" class="form-control form-account" value="" name="email" placeholder="Email" class="input-full"autocorrect="off" autocapitalize="off">
+              </div>
+                <button class="account-btn-submit">{{ 'customer.recover_password.submit' | t }}</button>  
+                <button class="account-btn-submit margin_top_20 HideRecoverPasswordLink">{{ 'customer.recover_password.cancel' | t }}</button>  
+              {% endform %}
+            </div>
+          </div>
       </div>
     </div>
-  </div>
   </div>
   {% comment %}
   If accounts are set as optional, the following will be shown as an option

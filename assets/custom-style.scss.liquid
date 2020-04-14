@@ -348,7 +348,7 @@ input.spr-button:hover {
     justify-content: center;
     .account-register {
         width: 50%;
-        padding: 100px 0;
+        height: 500px;
         background: #FAFAFA;
         display: flex;
         flex-wrap: wrap;
@@ -365,7 +365,7 @@ input.spr-button:hover {
     }
     .account-login {
         width: 50%;
-        padding: 100px 0;
+        height: 500px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -466,6 +466,84 @@ li.fs-18 {
 .e-contact .btn-submit {
     border-radius: 0;
     color: #fff;
+}
+.about-us-title {
+    margin-bottom: 100px;
+}
+.blog-widget.blog-widget-search form input {
+    border-radius: 0 !important;
+    background: #F3F6FA;
+}
+.blog-widget-banner.blog-widget a {
+    border: 1px solid #FC3F93;
+    box-sizing: border-box;
+    border-radius: 6px;
+    color: #FC3F93;
+}
+.blog-post-author {
+    display: none;
+}
+.blog-post-item .blog-post-title {
+    font-family: Libre Franklin;
+    line-height: 34px;
+    font-weight: 600;
+}
+.button-blog {
+    color: #FC3F93 !important;
+}
+.collection-product-holder {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    .collection-product-img {
+        width: 30%;
+        .product-img-catalog {
+            width: 100%;
+            display: block;
+            max-width: 100%;
+            margin: auto;
+        }
+    }
+    .collection-product-info {
+        padding: 20px 10px;
+    }
+}
+.promo-tag{
+    display: flex;
+    .promo-tag-title {
+        padding: 5px 0;
+        margin-right: 10px;
+    }
+    a{
+        border: 1px solid #FC3F93;
+        box-sizing: border-box;
+        border-radius: 6px;
+        color: #FC3F93;
+        padding: 5px 20px;
+        margin: 0 10px 10px 0;
+        display: inline-block;
+    }
+}
+.blog-comment .blog-comment-bottom .btn-submit {
+    background: linear-gradient(256.68deg, #FF85BB -5.06%, #FC3F93 58.76%);
+    box-shadow: 4px 4px 20px rgba(233, 135, 152, 0.6);
+    color: #fff;
+    border-radius: 0;
+    &:hover {
+        opacity: 0.8;
+        background: linear-gradient(256.68deg, #FF85BB -5.06%, #FC3F93 58.76%);
+        box-shadow: 4px 4px 20px rgba(233, 135, 152, 0.6);
+    }
+}
+.btn-lostpwd.spc {
+    text-decoration: none;
+    &:hover {
+        color: #777;
+    }
+}
+.form-error, .errors {
+    width: 400px;
+    margin: 20px auto;
 }
 @media screen and (max-width:1400px){
     .slider-home-classic .text-slider {
@@ -618,5 +696,10 @@ li.fs-18 {
     }
     img.img-responsive.ciloe_img_fit {
         width: 100%;
+    }
+    .collection-product-holder {
+        .collection-product-img {
+            width: 100%;
+        }
     }
 }
