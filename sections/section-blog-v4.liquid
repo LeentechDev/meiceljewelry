@@ -52,7 +52,7 @@
     <div class="h-article-items">
             <div class="blog-post-item">
               {% if article.image %}
-              <div class="blog-img inline-block">
+              <div class="blog-img inline-block h-article-img">
                   <a href="{{ article.url }}" class="hover-images">{{ article | img_url: 'master' | img_tag: article.title }}</a>
               </div>
               {% endif %}

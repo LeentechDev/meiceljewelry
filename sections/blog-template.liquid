@@ -18,7 +18,7 @@
             {% for article in blog.articles %}
             <div class="blog-post-item v2  border-bot">
                 {% if article.image %}
-                <div class="blog-img">
+                <div class="blog-img collection-promo-img">
                     <a href="{{ article.url }}" class="hover-images">{{ article | img_url: 'master' | img_tag: article.title }}</a>
                 </div>
                 {% endif %}
