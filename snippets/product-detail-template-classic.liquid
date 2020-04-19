@@ -97,7 +97,7 @@
             </div>
             {% if section.settings.show_sdes %}
             <div class="product-description">
-             {{product.description | split:'<!-- specification -->' | first}}
+             {{product.description | split:'<!-- break -->' | first}}
             </div>
             {% endif %}
             {% assign current_variant = product.selected_or_first_available_variant %}

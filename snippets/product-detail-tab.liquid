@@ -1,5 +1,4 @@
-{% assign productDes = product.description | split: '<!-- specification -->'| first %}
-{% assign productSpec = product.description | split: '<!-- specification -->'| last %}
+{% assign productDes = product.description | split: '<!-- break -->' %}
 <div class="single-product-tab ver3 margin_bottom_50">
   <div class="cmt-title text-center abs">
     <ul class="nav nav-tabs v3 text-center ">
@@ -18,7 +17,8 @@
     {%if section.settings.enable_description_tab%}
     <div id="desc" class="tab-pane fade in active">
       {% if section.settings.custom_tab_des == 'default' %}
-      {{productDes}}
+      {{productDes[0]}}
+      {{productDes[2]}}
       {% elsif section.settings.custom_tab_des == 'pin' %}
       {% include 'ciloe_pin_pd_detail' %}
       {% elsif section.settings.custom_tab_des == 'page' %}
@@ -35,7 +35,7 @@
              src="{{section.settings.ct_option_1 | img_url:'master'}}" class="img-reponsive"{%endif%} alt="" /> 
       </div>
       {% elsif section.settings.custom_tab_option == "ct_ops_html" %}
-      {{productSpec}}
+      {{productDes[1]}}
       {% elsif section.settings.custom_tab_option == "ct_ops_page" %}
       {{section.settings.ct_option_3}}    
       {% endif %}

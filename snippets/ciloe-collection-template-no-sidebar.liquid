@@ -1,9 +1,19 @@
 <div class="shop_page ">
   {% include 'ciloe-banner' %}
-  <div class=" ">
+  <div class="">
+  {% if collection.products_count == 0 %}
+    <div class="collection-noproduct-container">
+      <div class="collection-noproduct-img">
+        <img src="{{ 'box1.png' | asset_url }}" alt="" class="noproduct-img">
+      </div>
+      <div class="collection-noproduct">
+        <h1 class="margin_top_30 margin_bottom_30">No available products</h1>
+        <p>There’s no available products for this collection at the moment.</p>
+      </div>
+    </div>
+  {% else %}
   {% include 'ciloe-btn-layout' %}
   <div class="container content_shop ">
-    
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 product_shop product-collection-grid product_full">
         <div class="row">
@@ -19,6 +29,7 @@
       </div>
     </div>
   </div>
+  {% endif %}
 </div>
 </div>
 <style>

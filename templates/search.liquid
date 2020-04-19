@@ -44,7 +44,15 @@ If you do, the pagination of results will be broken.
           
           {% if search.performed %}
           {% if search.results_count == 0 %}
-          <h3 class="heading  ">{{ 'general.search.no_results_html' | t: terms: search.terms }}</h3>
+          <div class="search-noresult-container">
+            <div class="search-noresult-img">
+              <img src="{{ 'search1.png' | asset_url }}" alt="" class="search-img">
+            </div>
+            <div class="search-noresult">
+              <h1 class="heading  ">{{ 'general.search.no_results_html' | t: terms: search.terms }}</h1>
+              <p>Sorry, your search has no results. Please try another search.</p>
+            </div>
+          </div>
           {% else %}
           <h3 class="heading  ">{{ 'general.search.results_for_html' | t: terms: search.terms }}</h3>
           {% endif %}
