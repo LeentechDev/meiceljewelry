@@ -7,7 +7,7 @@
         {% form 'create_customer' %}
           {{ form.errors | default_errors }}
           <div class="login-form margin_top_30"> 
-              <div class="form-group margin_bottom_20" style="width: 400px;">
+              <div class="form-group account-input">
                   <input type="email" class="form-control bdr margin_bottom_20" name="customer[email]" class="{% if form.errors contains 'email' %} input--error{% endif %}" {% if form.email %} value="{{ form.email }}"{% endif %} autocorrect="off" autocapitalize="off" placeholder="Email">
                   <input type="password" class="form-control bdr" name="customer[password]" value="" class="{% if form.errors contains 'password' %} input--error{% endif %}" placeholder="Password">
               </div>
@@ -29,9 +29,9 @@
         <p class="margin_top_20">Sign in your account.</p>
         {% form 'customer_login' %}
           {{ form.errors | default_errors }}
-            <div class="page-content margin_top_30">
+            <div class="margin_top_30">
             <div class="login-form">
-              <div class="form-group">
+              <div class="form-group account-input">
                 <input type="email" class="form-control bdr margin_bottom_20" name="customer[email]" placeholder="Email">
               {% if form.password_needed %}
                 <input type="password" class="form-control bdr" name="customer[password]" placeholder="Password">
@@ -66,7 +66,7 @@
               {% if form.posted_successfully? %}
               <span class="hide reset-password-success"></span>
               {% endif %}
-              <div class="form-group" style="width: 400px;margin: 20px auto;">
+              <div class="form-group account-input">
                 <input type="email" class="form-control form-account" value="" name="email" placeholder="Email" class="input-full"autocorrect="off" autocapitalize="off">
               </div>
                 <button class="account-btn-submit">{{ 'customer.recover_password.submit' | t }}</button>  

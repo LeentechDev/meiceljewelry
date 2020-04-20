@@ -2,45 +2,46 @@
   
   <div class="container container_35 margin_top_50 collection_categories margin_bottom_80 h-cl-mb">
 
-    <div class="row flex v2">
+    <div class="row flex v2 h-product-collection">
       
       <div class="col relative content_collection h-banner-right">
         
           {% for i in (1..2) %}
-          <div class="row">
+          <div class="row h-banner-right-child">
           {% capture url %}url_{{i}}{% endcapture %}
           {% capture img %}img_{{i}}{% endcapture %}
           {% capture imghover %}img_{{i | plus: 2}}{% endcapture %}
           {% capture local_text %}local_text_{{i}}{% endcapture %}
           {% capture title %}title_{{i}}{% endcapture %}
           {% capture btn_name %}btn_name_{{i}}{% endcapture %}
-          <div class="col relative collection">
+          <div class="col relative collection h-banner-right-img" onmouseover="this.style.backgroundImage='url({{section.settings[imghover] | img_url:'master'}})';" onmouseout="this.style.backgroundImage='url({{section.settings[img] | img_url:'master'}})';" style="background-image: url('{{section.settings[img] | img_url:'master'}}');">
             <a href="{{section.settings[url]}}" class="inline-block relative  {% if section.settings.enable_overlay %}overlay_banner{% endif %} over-hidden">
-              <img src="{{section.settings[img] | img_url:'master'}}" 
+              <!-- <img src="{{section.settings[img] | img_url:'master'}}" 
               onmouseover="this.src='{{section.settings[imghover] | img_url:'master'}}'"
               onmouseout="this.src='{{section.settings[img] | img_url:'master'}}'"
-              class="img-responsive hover-zoom-out">
-            </a>
+              class="img-responsive hover-zoom-out"> -->
             <div class="absolute text_collection">
               <h4 class=" {% if section.settings[local_text] == 'center' %} text-center {% elsif section.settings[local_text] == 'left' %} text-left {% elsif section.settings[local_text] == 'right' %} text-right {% endif %}">{{section.settings[title]}}</h4>
               <div class=" over-hidden {% if section.settings[local_text] == 'center' %} text-center {% elsif section.settings[local_text] == 'left' %} text-left {% elsif section.settings[local_text] == 'right' %} text-right {% endif %}"><a href="{{section.settings[url]}}" class="h-collection-btn inline-block over-hidden">{{section.settings[btn_name]}}</a></div>
             </div>
+            </a>
           </div>
           </div>
           {% endfor %}
       </div>
 <!--        -->
-      <div class="col relative banner-collection">
+      <div class="col relative banner-collection h-banner-left-img" onmouseover="this.style.backgroundImage='url({{section.settings.img_banner_hover | img_url:'master'}})';" onmouseout="this.style.backgroundImage='url({{section.settings.img_banner | img_url:'master'}})';" style="background-image: url('{{section.settings.img_banner | img_url:'master'}}');">
         <a href="{{section.settings.url_banner}}" class="inline-block relative over-hidden">
-          <img src="{{section.settings.img_banner | img_url:'master'}}" 
+          <!-- <img src="{{section.settings.img_banner | img_url:'master'}}" 
           onmouseover="this.src='//cdn.shopify.com/s/files/1/0268/5534/2163/files/Wedding_Rings.png?v=1586131246'"
           onmouseout="this.src='{{section.settings.img_banner | img_url:'master'}}'"
-          class="img-responsive hover-zoom-out">
-        </a>
+          class="img-responsive hover-zoom-out"> -->
+        
         <div class="absolute text_collection">
           <h2 class="lt-2 {% if section.settings.local_text_banner == 'center' %} text-center {% elsif section.settings.local_text_banner == 'left' %} text-left {% elsif section.settings.local_text_banner == 'right' %} text-right {% endif %}">{{section.settings.title_banner}}</h2>
           <div class=" over-hidden {% if section.settings.local_text_banner == 'center' %} text-center {% elsif section.settings.local_text_banner == 'left' %} text-left {% elsif section.settings.local_text_banner == 'right' %} text-right {% endif %}" style="margin-top: 20px;"><a href="{{section.settings.url_banner}}" class="h-collection-btn inline-block over-hidden relative">{{section.settings.btn_name_banner}}</a></div>
         </div>
+      </a>
       </div>
     </div>
 
@@ -504,7 +505,59 @@
           	"id": "btn_name_banner",
           	"label": "Button collection banner",
 			"default": "shop now"
-    }
+    },
+{
+      "type": "header",
+      "content": "Banner Hover"
+},
+{
+      "type": "url",
+      "id": "url_banner_hover",
+      "label": "URL collection banner",
+"default": "/collections/all"
+},
+{
+      "type": "image_picker",
+      "id": "img_banner_hover",
+      "label": "Image collection banner",
+"info": "903x918 image size"
+},
+{
+   "type":      "select",
+   "id":        "local_text_banner_hover",
+   "label":     "Select position text collection",
+   "options": [
+{
+ 
+ "value": "left",
+ "label": "Left"
+},
+{
+ 
+ "value": "center",
+ "label": "Center"
+},
+{
+ 
+ "value": "right",
+ "label": "Right"
+}
+],
+ "default":   "center"
+
+},
+{
+      "type": "text",
+      "id": "title_banner_hover",
+      "label": "Title collection banner",
+"default": "Trending now"
+},
+{
+      "type": "text",
+      "id": "btn_name_banner_hover",
+      "label": "Button collection banner",
+"default": "shop now"
+}
   ],
 
   "presets": [
