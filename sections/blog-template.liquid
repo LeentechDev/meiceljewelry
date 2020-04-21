@@ -1,13 +1,13 @@
 {% paginate blog.articles by 3 %}
 <!--hero-section-->
-<div class="about-us-banner" style="background-image: url('{{'banner_meicel.png'| asset_url }}');">
+<div class="about-us-banner" style="background-image: url('{{section.settings.img_banner | img_url:'master'}}');">
   <div class="about-us-title">
     <h1 class="text-center margin_bottom_20">Promos</h1>
     <div class="text-center">
       {% include 'breadcrumb' %}
     </div>
   </div>
-  </div>
+</div>
 <div class="container ">
     <div class="row">
     <div class="blog ciloe_blog_page space_top_100">

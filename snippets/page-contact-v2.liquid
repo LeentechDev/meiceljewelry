@@ -1,12 +1,5 @@
 {% if section.settings.enable_contact_info2 %}
-<div class="about-us-banner" style="background-image: url('{{'banner_meicel.png'| asset_url }}');">
-  <div class="about-us-title">
-    <h1 class="text-center">{{ page.title }}</h1>
-    <div class="text-center">
-      {% include 'breadcrumb' %}
-    </div>
-  </div>
-  </div>
+{% include 'custom-banner' %}
 <div class="container e-contact space_bot_100 space_top_100">       
   <div class="row">
     {% if section.settings.enable_contactv2_phone %}

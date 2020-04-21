@@ -1,0 +1,49 @@
+<script>
+AOS.init({
+  duration: 2500,
+});
+</script>
+{% include 'custom-banner' %}
+<div class="container">
+<div class="about-us-content margin_bottom_30">
+  <div class="about-us-holder">
+    <div class="about-us-center">
+      <h2 class="margin_bottom_30" data-aos="fade-right">{{section.settings.custom_title1}}</h2>
+        <div class="content-1" data-aos="fade-up">
+            {{section.settings.custom_content1}}
+        </div>
+    </div>
+  </div>
+  <div class="about-us-holder">
+    <div class="about-us-center" data-aos="fade-left">
+      <div style="background-image: url('{{section.settings.content_img1 | img_url:'master'}}');width: 100%;height: 50vh; background-size: cover;background-position: center center;background-repeat: no-repeat;"></div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="about-us-choose">
+  <div class="container">
+    <div class="about-choose-title margin_top_50 margin_bottom_50" data-aos="fade-down">
+      <h2>{{section.settings.custom_title2}}</h2>
+    </div>
+    <div class="about-us-content">
+      <div class="about-us-holder">
+        <div class="about-us-center" data-aos="zoom-out-up">
+          <div style="background-image: url('{{section.settings.content_img2 | img_url:'master'}}');width: 100%;height: 50vh; background-size: contain;background-position: center center;background-repeat: no-repeat;"></div>
+        </div>
+      </div>
+      <div class="about-us-holder">
+        <div class="about-us-center" data-aos="zoom-in-up">
+            <ul>
+              <li>{{section.settings.custom_li_text1}}</li>
+              <li>{{section.settings.custom_li_text2}}</li>
+              <li>{{section.settings.custom_li_text3}}</li>
+              <li>{{section.settings.custom_li_text4}}</li>
+              <li>{{section.settings.custom_li_text5}}</li>
+              <li>{{section.settings.custom_li_text6}}</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
