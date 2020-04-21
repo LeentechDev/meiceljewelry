@@ -46,7 +46,6 @@
   {% if settings.po_style == "po_dropdown" %}
   {{ 'timber_2.scss.css' | asset_url | stylesheet_tag }}
   {% endif %}
-
   {{ 'font-awesome.min.css' | asset_url | stylesheet_tag }}
   {{ 'simple-line-icons.css' | asset_url | stylesheet_tag }}
   {{ 'ionicons.min.css' | asset_url | stylesheet_tag }}
@@ -74,7 +73,9 @@
   {{ 'style-main.css' | asset_url | stylesheet_tag }}
   {{ 'style-more.css' | asset_url | stylesheet_tag }}
   {{ 'engo-customize.scss.css' | asset_url | stylesheet_tag }}
-
+  {{ 'custom-style.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&family=Libre+Franklin&display=swap' | | stylesheet_tag }}
+  {{ 'https://unpkg.com/aos@next/dist/aos.css' | stylesheet_tag }}
   <!-- Header hook for plugins ================================================== -->
   {{ content_for_header }}
   {% include 'oldIE-js' %}
@@ -83,7 +84,7 @@
   {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
   {{ 'modernizr-2.8.3.min.js' | asset_url | script_tag }}
   {{ 'option_selection.js' | shopify_asset_url | script_tag }}
-
+  {{ 'https://unpkg.com/aos@next/dist/aos.js' | script_tag }}
 
   <script>
     window.ajax_cart = true;

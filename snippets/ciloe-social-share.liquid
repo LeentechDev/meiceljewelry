@@ -25,9 +25,9 @@ Share button styles are:
     <a href="//www.facebook.com/sharer.php?u={{ permalinkURL }}" target="_blank" class="facebook-share-link" title="Facebook">
       <i class="fa fa-facebook"></i> 
     </a>
-    <a href="//plus.google.com/share?url={{ permalinkURL }}" target="_blank" class="twitter-share-link" title="Google Plus">
+    <!-- <a href="//plus.google.com/share?url={{ permalinkURL }}" target="_blank" class="twitter-share-link" title="Google Plus">
       <i class="fa fa-google-plus"></i>
-    </a> 
+    </a>  -->
     <a href="//pinterest.com/pin/create/button/?url={{ permalinkURL }}&amp;media=http:{% if template contains 'product' %}{{ product | img_url: '1024x1024' }}{% else %}{{ article | img_url: '1024x1024' }}{% endif %}&amp;description={{ shareTitle }}" target="_blank" class="pinterest-share-link" title="Pinterest"> 
       <i class="fa fa-pinterest-p"></i>
     </a>

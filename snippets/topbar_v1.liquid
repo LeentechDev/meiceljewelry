@@ -6,7 +6,7 @@
           <div class="element element_v7 hidden-xs hidden-sm">
             <a href="{{settings.topbar_text5_url}}">{{settings.email-404}} </a>
           </div>
-          {% if settings.hdv4_enable_language_currency %}
+          {% if settings.hdv2_enable_language_currency %}
           <div class="language_currency">
             <div class="element element_v7 element-leaguage">
               <a id="label2" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -40,26 +40,31 @@
           {% endif %}
         </div>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
         <div class="topbar-center">
           <div class="hidden-xs hidden-sm">
             <span class="">{{settings.topbar_text4_center}}</span>
           </div>
         </div>
+      <div class="topbar-center mobile">
+        <div class="text-center" style="padding:0 15px">
+          <span class="">{{settings.topbar_text4_center}}</span>
+        </div>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 flex-right">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 hidden-xs flex-right">
         <div class="topbar-right">
           <div class="element element_v7 hidden-xs hidden-sm">
-            <a href="{{settings.topbar_text5_url}}">{{settings.topbar_text5}} </a>
+            <!-- <a href="{{settings.topbar_text5_url}}">{{settings.topbar_text5}} </a> -->
+            <a href="#login_form" id="btn-login" class="topbar-account">Login</a>
           </div>
           <div class="element element_v7 hidden-xs hidden-sm">
-            <a href="{{settings.topbar_text4_url}}">
+            <!-- <a href="{{settings.topbar_text4_url}}">
               <span>{{settings.topbar_text4}}</span>
-            </a>
+            </a> -->
+            <a href="#login_form" id="btn-login" class="topbar-account">Register</a>
           </div>
-          <div class="element element_v7 hidden-xs hidden-sm" style="padding-right: 0;">
+          <!-- <div class="element element_v7 hidden-xs hidden-sm" style="padding-right: 0;">
             <a href="{{settings.topbar_text3_url}}">{{settings.topbar_text3}}</a>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

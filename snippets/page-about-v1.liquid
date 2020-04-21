@@ -1,6 +1,51 @@
-{% include 'ciloe-banner' %}
-
-<div class="container-fluid content_about_page">
+{% include 'custom-banner' %}
+<div class="container">
+<div class="about-us-content margin_bottom_30">
+  <div class="about-us-holder">
+    <div class="about-us-center">
+      <h2 class="margin_bottom_30">The collection of jewelries are carefully designed to suit a client’s style and preferences.</h2>
+      <p>
+        They can be customized and tailored corresponding to their budget. Today, the name Meicel has quickly become one of the few jewelry lines with instant recognition and has made the owner a seasoned professional in the jewelry industry for the past 24 years.
+      </p>
+      <p class="margin_top_20">
+        In 2005, Meicel Jewelry came out on their first Bridal Jewelry Collection. These pieces were presented to the public in a bridal exhibition held at Megatrade Hall. Following endless demands for wedding and engagement rings, the shop has been participating annually in various exhibits held at the PICC, NBC Tent, Esplanade, SM Megatradehall in Megamall, SMX Convention Center, Rockwell, Taal Vista Hotel, and Singapore
+      </p>
+    </div>
+  </div>
+  <div class="about-us-holder">
+    <div class="about-us-center">
+      <div style="background-image: url('{{ 'about1.png'| asset_url }}');width: 100%;height: 50vh; background-size: cover;background-position: center center;background-repeat: no-repeat;"></div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="about-us-choose">
+  <div class="container">
+    <div class="about-choose-title margin_top_50 margin_bottom_50">
+      <h2>Why choose us?</h2>
+    </div>
+    <div class="about-us-content">
+      <div class="about-us-holder">
+        <div class="about-us-center">
+          <div style="background-image: url('{{ 'about2.png'| asset_url }}');width: 100%;height: 50vh; background-size: contain;background-position: center center;background-repeat: no-repeat;"></div>
+        </div>
+      </div>
+      <div class="about-us-holder">
+        <div class="about-us-center">
+            <ul>
+              <li><strong>Flexible</strong> payment terms</li>
+              <li><strong>Free Shipping</strong> within Metro Manila</li>
+              <li><strong>We care the most.</strong> Service is at most important.</li>
+              <li><strong>Trust jewelry.</strong> Always being recommended and referred by clients.</li>
+              <li><strong>Masterful in customization.</strong> Experienced and specialized in doing intricate designs. Quality always at the most concern.</li>
+              <li><strong>Finest Quality.</strong> Quality doesn't have to be expensive. We aim to make best product with less price tag.</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
     <div class="row">
       {% if section.settings.show_content_1 %}
       <div class="container">

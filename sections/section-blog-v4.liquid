@@ -1,6 +1,6 @@
 <div data-section-id="{{ section.id }}" data-section-type="slide-v1" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
 <!--slide-->
-  <div class=" slider-blog-clean">
+  <!-- <div class=" slider-blog-clean">
      <div class="container">
        <div class="row">
              <div class="ciloe-title-section margin_bottom_50 container relative">
@@ -18,14 +18,17 @@
                 </div>
                 {% endif %}
                 <div class="blog-info-bd">
-                    <div class="blog-info text-center">
+                    <div class="blog-info">
                        <div class="blog-post-tags blog-post-author center">
                             {% for tag in article.tags %}
                             <a class="uppercase fz-12 author margin_top_10" href="{{ blog.url }}/tagged/{{ tag | handle }}" rel="category tag">{{ tag }}</a>{% unless forloop.last %},{% endunless %}
                             {% endfor %}
                         </div>
-                        <h3 class="blog-post-title margin_bottom_10"><a href="{{ article.url }}">{{ article.title }}</a></h3>
+                        <h3 class="blog-post-title margin_bottom_10 margin_top_10"><a href="{{ article.url }}">{{ article.title }}</a></h3>
+                        <h5 class="h-article-date  margin_bottom_10 margin_top_10">Posted on {{ article.published_at | time_tag: format: 'date' }}</h5>
+                        <h5 class="margin_bottom_10 margin_top_10">{{ article.excerpt }}</h5>
                       <a href="{{ article.url }}" class="button-blog ">{{section.settings.btn_blog}}</a> 
+                      <h5>{{ blogs[col].article }}</h5>
                     </div>
                 </div>
             </div>
@@ -37,7 +40,49 @@
     </div>
   </div>
     </div>
+  </div> -->
+  <div class="container">
+  <div class="h-article-holder margin_top_50">
+    <div class="h-article-mobile-header">
+      <h1>Who doesn't love a good deal?</h1>
+    </div>
+    {% assign products_limit = section.settings.limit %}
+    {% assign col = section.settings.blog %}
+    {% for article in blogs[col].articles limit: products_limit %}
+    <div class="h-article-items">
+            <div class="blog-post-item">
+              {% if article.image %}
+              <div class="blog-img inline-block h-article-img">
+                  <a href="{{ article.url }}" class="hover-images">{{ article | img_url: 'master' | img_tag: article.title }}</a>
+              </div>
+              {% endif %}
+              <div class="blog-info-bd">
+                  <div class="blog-info">
+                     <!-- <div class="blog-post-tags blog-post-author center">
+                          {% for tag in article.tags %}
+                          <a class="uppercase fz-12 author margin_top_10" href="{{ blog.url }}/tagged/{{ tag | handle }}" rel="category tag">{{ tag }}</a>{% unless forloop.last %},{% endunless %}
+                          {% endfor %}
+                      </div> -->
+                      <h3 class="blog-post-title margin_bottom_10 margin_top_10"><a href="{{ article.url }}">{{ article.title }}</a></h3>
+                      <h5 class="h-article-date  margin_bottom_10 margin_top_10">Posted on {{ article.published_at | time_tag: format: 'date' }}</h5>
+                      <h5 class="margin_bottom_10 margin_top_10">{{ article.excerpt }}</h5>
+                    <a href="{{ article.url }}" class="button-blog ">{{section.settings.btn_blog}}</a> 
+                    <h5>{{ blogs[col].article }}</h5>
+                  </div>
+              </div>
+          </div>
+    </div>
+    {% endfor %}
+    <div class="h-article-btn">
+      <h1>Who doesn't love a good deal?</h1>
+      <div class="h-article-promo margin_top_20">
+        <a href="{{section.settings.url}}" class="delay03 relative btn-section"> 
+          {{section.settings.btn_name}}
+        </a>
+      </div>
+    </div>
   </div>
+</div>
 <!--endslide-->
 </div>
 <style>
@@ -61,14 +106,14 @@
     padding:50px 0;
   }
     .slider-blog-clean .content-blog.v1 .blog-info{
-  	padding:0 20px;
+  	/* padding:0 20px; */
   }
   @media (min-width:1025px){
       .slider-blog-clean{
     padding:120px 0;
   }
         .slider-blog-clean .content-blog.v1 .blog-info{
-  	padding:0 60px;
+  	/* padding:0 60px; */
   }
   }
   .slider-blog-clean .title-blog{
@@ -77,7 +122,7 @@
   }
   .slider-blog-clean .button-blog {
     font-weight: 500;
-    color: #cfcfcf;
+    color: #000000;
     letter-spacing: 0.5px;
 }
   .slider-blog-clean .content-blog.v1 .blog-info .blog-post-title{

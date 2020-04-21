@@ -1,0 +1,39 @@
+{% include 'custom-banner' %}
+<div class="container">
+    <div class="terms-container">
+        {% for block in section.blocks %}
+            {{block.settings.terms_content_text}}
+        {% endfor %}
+    </div>
+</div>
+{% schema %}
+{
+    "name": "Terms and Condition",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "img_banner",
+            "label": "Image banner",
+            "info": "1398x316px recommended"
+        }
+    ],
+    "blocks" : [
+        {
+            "type": "text",
+            "name": "Text",
+            "settings": [
+                {
+                    "type": "richtext",
+                    "id" : "terms_content_text",
+                    "label": "Text"
+                }
+            ]
+        }
+    ],
+    "presets": [
+    {
+      "name": "Page About Us"
+    }
+  ]
+}
+{% endschema %}

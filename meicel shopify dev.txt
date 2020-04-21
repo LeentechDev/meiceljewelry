@@ -1,3 +1,0 @@
-api password: 4060393ed75f5e4bab82b4c7adde76df
-
-theme configure --password=4060393ed75f5e4bab82b4c7adde76df --store=meicel-jewelry-store.myshopify.com --themeid=79710257235

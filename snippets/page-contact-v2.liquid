@@ -1,4 +1,5 @@
 {% if section.settings.enable_contact_info2 %}
+{% include 'custom-banner' %}
 <div class="container e-contact space_bot_100 space_top_100">       
   <div class="row">
     {% if section.settings.enable_contactv2_phone %}
@@ -7,13 +8,30 @@
         <div class="icon">
           <img src="{{section.settings.img_phone | img_url:'master'}}" class="img-responsive">
         </div>
-        <div class="text">
-          <h3 class="contact-title spc uppercase lt-2">{{section.settings.abus_info_title3}}</h3>
+        <div class="contact-text-holder">
+          <div class="contact-img-holder">
+            <img src="{{ 'local_phone.png'| asset_url }}" alt="">
+          </div>
+          <div class="text">
+            <h4 class="contact-title spc uppercase lt-2">{{section.settings.abus_info_title3}}</h4>
           <ul class="footer-block-content">
             <li class="fs-18">
               <span>{{section.settings.abus_info_content1}}</span>
             </li>
+            <li class="fs-18">
+              <span>{{section.settings.abus_info_phone1}}</span>
+            </li>
+            <li class="fs-18">
+              <span>{{section.settings.abus_info_phone2}}</span>
+            </li>
+            <li class="fs-18">
+              <span>{{section.settings.abus_info_phone3}}</span>
+            </li>
+            <li class="fs-18">
+              <span>{{section.settings.abus_info_phone4}}</span>
+            </li>
           </ul>
+        </div>
         </div>
       </div>
     </div>
@@ -24,16 +42,21 @@
         <div class="icon">
           <img src="{{section.settings.img_add | img_url:'master'}}" class="img-responsive">
         </div>
+        <div class="contact-text-holder">
+        <div class="contact-img-holder">
+          <img src="{{ 'place.png'| asset_url }}" alt="">
+        </div>
         <div class="text">
-          <h3 class="contact-title spc uppercase lt-2">{{section.settings.abus_info_title1}}</h3> 
+          <h4 class="contact-title spc uppercase lt-2">{{section.settings.abus_info_title1}}</h4> 
           <ul class="footer-block-content">
             <li class="fs-18">
               <span>{{section.settings.abus_info_content3}}</span>
             </li>
-            <li class="fs-14">
+            <li class="fs-18">
               <span>{{section.settings.abus_info_content4}}</span>
             </li>                       
           </ul>
+        </div>
         </div>
       </div>
     </div>
@@ -44,13 +67,18 @@
         <div class="icon">
           <img src="{{section.settings.img_email | img_url:'master'}}" class="img-responsive">
         </div>
+        <div class="contact-text-holder">
+        <div class="contact-img-holder">
+          <img src="{{ 'mail.png'| asset_url }}" alt="">
+        </div>
         <div class="text">
-          <h3 class="contact-title spc uppercase lt-2">{{section.settings.abus_info_title2}}</h3> 
+          <h4 class="contact-title spc uppercase lt-2">{{section.settings.abus_info_title2}}</h4> 
           <ul class="footer-block-content">
             <li class="fs-18">
               <span>{{section.settings.abus_info_content5}}</span>
             </li>
           </ul>
+        </div>
         </div>
       </div>
     </div>
@@ -102,12 +130,12 @@
             <input type="email" id="email" class=" col-sm-6 col-md-6 col-xs-12 form-control bdr" name="contact[email]" value="" placeholder="{{section.settings.abus_contact_input4_name}}">
           </div>
           <div class=" col-sm-12 col-md-12 col-xs-12">
-            <textarea id="message" class="form-control bdr" name="contact[body]" rows="10" placeholder="{{section.settings.abus_contact_input3_name}}"></textarea>
+            <textarea id="message" class="form-control bdr" name="contact[body]" rows="10" placeholder="What do you want to talk about?*"></textarea>
           </div>
         </div>
-        <div class="form-group text-center">
+        <div class="form-group">
           <button type="submit" class="btn btn-submit">
-            {{section.settings.abus_contact_btn_name}}
+            Send Message
           </button>
         </div>
       </div>
@@ -115,4 +143,4 @@
     </div>
   </div>
 
-</div> col-xs-12
+</div>

@@ -1,0 +1,39 @@
+{% include 'custom-banner' %}
+<div class="container">
+    <div class="terms-container">
+        {% for block in section.blocks %}
+            {{block.settings.privacy_content_text}}
+        {% endfor %}
+    </div>
+</div>
+{% schema %}
+{
+    "name": "Privacy Policy",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "img_banner",
+            "label": "Image banner",
+            "info": "1398x316px recommended"
+        }
+    ],
+    "blocks" : [
+        {
+            "type": "text",
+            "name": "Text",
+            "settings": [
+                {
+                    "type": "richtext",
+                    "id" : "privacy_content_text",
+                    "label": "Text"
+                }
+            ]
+        }
+    ],
+    "presets": [
+    {
+      "name": "Privacy Policy"
+    }
+  ]
+}
+{% endschema %}

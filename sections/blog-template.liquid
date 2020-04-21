@@ -1,6 +1,13 @@
 {% paginate blog.articles by 3 %}
 <!--hero-section-->
-{% include 'ciloe-banner' %}
+<div class="about-us-banner" style="background-image: url('{{section.settings.img_banner | img_url:'master'}}');">
+  <div class="about-us-title">
+    <h1 class="text-center margin_bottom_20">Promos</h1>
+    <div class="text-center">
+      {% include 'breadcrumb' %}
+    </div>
+  </div>
+</div>
 <div class="container ">
     <div class="row">
     <div class="blog ciloe_blog_page space_top_100">
@@ -11,7 +18,7 @@
             {% for article in blog.articles %}
             <div class="blog-post-item v2  border-bot">
                 {% if article.image %}
-                <div class="blog-img">
+                <div class="blog-img collection-promo-img">
                     <a href="{{ article.url }}" class="hover-images">{{ article | img_url: 'master' | img_tag: article.title }}</a>
                 </div>
                 {% endif %}
@@ -22,7 +29,7 @@
                             <a class="uppercase fz-12 author margin_top_20" href="{{ blog.url }}/tagged/{{ tag | handle }}" rel="category tag">{{ tag }}</a>{% unless forloop.last %},{% endunless %}
                             {% endfor %}
                         </div>
-                        <h3 class="blog-post-title v2"><a href="{{ article.url }}">{{ article.title }}</a></h3>
+                        <h3 class="blog-post-title v2 margin_top_30"><a href="{{ article.url }}">{{ article.title }}</a></h3>
                         <div class="blog-post-desc space_bot_20">
                           {{article.excerpt | strip_html | strip_newlines | truncatewords: 90}}
                         </div>

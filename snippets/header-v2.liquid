@@ -1,4 +1,5 @@
 <header id="header" class="header-v2 delay05 {% if settings.enable_fix_hdv2 %}fixed{% endif %}">
+  {%include 'topbar_v1'%}
   <div class="container">
     <div class="row flex">
       <div class="hidden-lg hidden-md col-sm-4 col-xs-4" style="padding-top:27px;">
@@ -27,7 +28,7 @@
         <form method="get" class="searchform relative" action="/search" role="search">
           <label class="sr-only"  >search</label>
           <input type="hidden" name="type" value="product">
-          <input type="text" id="engo_autocomplate" value="{{ search.terms | escape }}" autocomplete="off" placeholder="ENTER KEYWORDS..." aria-label="{{ 'general.search.placeholder' | t }}" name="q" />
+          <input type="text" id="engo_autocomplate" value="{{ search.terms | escape }}" autocomplete="off" placeholder="Search for keywords" aria-label="{{ 'general.search.placeholder' | t }}" name="q" />
           <button type="button" class="submit absolute"><i class="{{ settings.icon-search }} fz-16" aria-hidden="true"></i></button>
         </form>
       </div>
@@ -47,9 +48,9 @@
           </a>
           {% endif %}
         </div>
-        <div class="hidden-sm hidden-xs flex center menu-header-v2">
+        <!-- <div class="hidden-sm hidden-xs flex center menu-header-v2">
           {% include 'ciloe-horizon-menu' %}
-        </div>
+        </div> -->
       </div>
       <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 text-right icon-main">
         {% if settings.hdv2_enable_language_currency %}
@@ -112,7 +113,7 @@
           {% endif %}
         </a>
         {% else %}
-        <a href="#login_form" class="delay03 inline-block hidden-sm hidden-xs" id="btn-login">
+        <a href="/account/login" class="delay03 inline-block hidden-sm hidden-xs" id="btn-login">
           {% if settings.style_icon_login == "icon" %}
           {% if settings.icon-login == blank %}
           <i class="zoa-icon-user"></i>
@@ -121,7 +122,7 @@
           {% endif %}
           {% else %}
           {% if settings.image_login == blank %}
-          <img src="{{'iconlogin.png' | asset_url}}" class="img-responsive">
+          <img src="{{'iconlogin2.png' | asset_url}}" class="img-responsive">
           {% else %}
           <img src="{{settings.image_login | img_url:'master'}}" class="img-responsive">
           {% endif %}
@@ -138,7 +139,7 @@
           {% endif %}S
           {% else %}
           {% if settings.image_cart == blank %}
-          <img src="{{'iconcar.png' | asset_url}}" class="img-responsive">
+          <img src="{{'iconcar2.png' | asset_url}}" class="img-responsive">
           {% else %}
           <img src="{{settings.image_cart | img_url:'master'}}" class="img-responsive">
           {% endif %}
@@ -148,7 +149,11 @@
 
       </div>
     </div>
-
+    <div class="row" style="padding-bottom: 5px;">
+      <div class="hidden-sm hidden-xs menu-header-v2">
+        {% include 'ciloe-horizon-menu' %}
+      </div>
+    </div>
   </div>
 </header>
 <style>

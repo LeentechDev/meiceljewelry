@@ -8,11 +8,11 @@ Just like blog.liquid page, define how many comments should be on each page.
 #comments is required, it is used as an anchor link by Shopify.
 {% endcomment %}
 
-<div class="blog-comment">
+<div class="blog-comment margin_top_30 margin_bottom_30">
     
     <div class="blog-comment-content">
         {% if article.comments_count > 0 %}
-        <div class="cmt-title text-center"><h3 class="">{{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }} ({{article.comments_count}})</h3></div>
+        <div class="cmt-title text-center margin_bottom_30"><h3 class="">{{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }} ({{article.comments_count}})</h3></div>
         {% endif %}
         {% if comment and comment.created_at %}
           <div class="alert alert-success alert-dismissible" role="alert">

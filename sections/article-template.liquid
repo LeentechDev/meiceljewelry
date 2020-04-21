@@ -1,5 +1,12 @@
 <!-- /sections/article-template.liquid -->
-{% include 'ciloe-banner' %}
+<div class="about-us-banner" style="background-image: url('{{section.settings.img_banner | img_url:'master'}}');">
+  <div class="about-us-title">
+    <h1 class="text-center">Promos</h1>
+    <div class="text-center">
+      {% include 'breadcrumb' %}
+    </div>
+  </div>
+</div>
 <div class="container">
   <div class="row">
     <div class="blog_post">
@@ -8,7 +15,7 @@
         <div class="blog-content  col-md-9 col-sm-12 col-md-pull-3  col-xs-12">
             <div class="blog-post-item border-bot">
                  <div class="blog-info-bd">
-                    <div class="blog-info space_bot_50">
+                    <div class="blog-info space_bot_20">
                         <div class="blog-post-tags blog-post-author">
                             {% for tag in article.tags %}
                             <a class="uppercase fz-12 author" href="{{ blog.url }}/tagged/{{ tag | handle }}" rel="category tag">{{ tag }}</a>{% unless forloop.last %},{% endunless %}
@@ -24,7 +31,7 @@
                 {% endif %}
                 <div class="blog-info-bd">
                     <div class="blog-info">
-                        <div class="blog-post-desc">
+                        <div class="blog-post-desc margin_top_20">
                             {{ article.content}}
                           <div class="blog-post-tags blog-post-author ">
                             <span class="tags-post space_top_20">Tags:{% for tag in article.tags %}
@@ -34,6 +41,53 @@
                         </div>
                         </div>
                     </div>
+                </div>
+                <div class="promo-featured-product">
+                  {% for collection in collections %}
+                    {% if collection.title == article.title %}
+                      {% assign collection_url = collection.url %}
+                      {% assign collection_handle = collection.handle %}
+                        <div class="promo-product-holder">
+                          {% for product in collections[collection_handle].products limit: 4 %}
+                            <a href="{{ product.url }}">
+                            <div class="collection-product-holder">
+                              <div class="collection-product-img">
+                                <img src="{{ product.images[0] | img_url: '1920x1080' }}" class="product-img-catalog"/>
+                              </div>
+                              <div class="collection-product-info margin_top_20">
+                                {% assign productDes = product.description | split: '<!-- break -->' %}
+                                <p>Item Code: <strong>{{ product.title }} | {{ product.price | money }} only</strong></p>
+                                <p class="margin_top_10">Ring Details:
+                                  <strong>
+                                    {% if productDes[3] != blank %}
+                                      <strong>{{ productDes[3] }}</strong>
+                                    {% else %}
+                                      <strong> There is no details.</strong>
+                                    {% endif %}
+                                  </strong>
+                                </p>
+                                <p class="margin_top_10">Available Sizes: 
+                                  {% for product_option in product.options_with_values %}
+                                  {% if product_option.name == 'Sizes' or product_option.name == 'sizes' or product_option.name == 'size' or product_option.name == 'Size' %}
+                                    {% for value in product_option.values %}
+                                      <strong>{{ value | join: ','}}</strong>
+                                    {% endfor %}
+                                  {% endif %}
+                                  {% endfor %}
+                                </p>
+                              </div>
+                              </div>
+                            </a>
+                          {% endfor %}
+                        </div>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+                <div class="promo-tag">
+                  <h4 class="promo-tag-title">TAGS: </h4>
+                  {% for tag in blog.all_tags %}
+                  {{ tag | link_to_add_tag: tag }}
+                  {% endfor %}
                 </div>
             </div>
           {% include 'related-article'%}
