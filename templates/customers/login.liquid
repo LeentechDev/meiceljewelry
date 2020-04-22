@@ -8,12 +8,15 @@
           {{ form.errors | default_errors }}
           <div class="login-form margin_top_30"> 
               <div class="form-group account-input">
+                  <input type="text" class="form-control bdr margin_bottom_20" name="customer[first_name]" class="{% if form.errors contains 'first_name' %} input--error{% endif %}" {% if form.first_name %} value="{{ form.first_name }}"{% endif %} autocorrect="off" autocapitalize="off" placeholder="First Name">
+                  <input type="text" class="form-control bdr margin_bottom_20" name="customer[last_name]" class="{% if form.errors contains 'last_name' %} input--error{% endif %}" {% if form.last_name %} value="{{ form.last_name }}"{% endif %} autocorrect="off" autocapitalize="off" placeholder="Last Name">
                   <input type="email" class="form-control bdr margin_bottom_20" name="customer[email]" class="{% if form.errors contains 'email' %} input--error{% endif %}" {% if form.email %} value="{{ form.email }}"{% endif %} autocorrect="off" autocapitalize="off" placeholder="Email">
                   <input type="password" class="form-control bdr" name="customer[password]" value="" class="{% if form.errors contains 'password' %} input--error{% endif %}" placeholder="Password">
               </div>
               <div class="flex lr">
                 <button type="submit" class="account-btn-submit">
-                  {{ 'customer.register.submit' | t }}
+                  <!-- {{ 'customer.register.submit' | t }} -->
+                  Create an account
                 </button>
             </div>
           </div>
@@ -34,18 +37,19 @@
               <div class="form-group account-input">
                 <input type="email" class="form-control bdr margin_bottom_20" name="customer[email]" placeholder="Email">
               {% if form.password_needed %}
-                <input type="password" class="form-control bdr" name="customer[password]" placeholder="Password">
+                <input type="password" class="form-control bdr margin_bottom_20" name="customer[password]" placeholder="Password">
+              {% endif %}
+              {% if form.password_needed %}
+                <a href="#recover" class="RecoverPassword" style="color: #7B7B7B;">Forgot your password?</a>
               {% endif %}
               </div>
               <div class="flex lr">
                   <button type="submit" class="account-btn-submit">
-                      {{ 'customer.login.log_in' | t }}
+                      <!-- {{ 'customer.login.log_in' | t }} -->
+                      Log in
                   </button>
                   
               </div>
-              {% if form.password_needed %}
-                <a href="#recover" class="btn-lostpwd spc RecoverPassword">Lost your password?</a>
-              {% endif %}
 
             </div>
             </div>
