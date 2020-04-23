@@ -100,8 +100,28 @@ For all available customer liquid tags:
                                                     <tr>
                                                         <td>{{ order.name | link_to: order.customer_url }}</td>
                                                         <td>{{ order.created_at | date: format: 'month_day_year' }}</td>
-                                                        <td>{{ order.financial_status_label }}</td>
-                                                        <td>{{ order.fulfillment_status_label }}</td>
+                                                        <td>
+                                                          {% if order.financial_status_label contains "Paid" %}
+                                                            <div class="alert alert-success">
+                                                              <i class="fa fa-check"></i> {{ order.financial_status_label }}
+                                                            </div>
+                                                          {% elsif order.financial_status_label contains "Pending"%}
+                                                            <div class="alert alert-warning">
+                                                              <i class="fa fa-circle"></i> {{ order.financial_status_label }}
+                                                            </div>
+                                                          {% endif %}
+                                                        </td>
+                                                        <td>
+                                                          {% if order.fulfillment_status_label contains "Fulfilled" %}
+                                                            <div class="alert alert-success">
+                                                              <i class="fa fa-check"></i> {{ order.fulfillment_status_label }}
+                                                            </div>
+                                                          {% elsif order.fulfillment_status_label contains "Unfulfilled" %}
+                                                            <div class="alert alert-warning">
+                                                              <i class="fa fa-circle"></i> {{ order.fulfillment_status_label }}
+                                                            </div>
+                                                          {% endif %}
+                                                        </td>
                                                         <td>{{ order.total_price | money }}</td>
                                                     </tr>
                                                 {% endfor %}

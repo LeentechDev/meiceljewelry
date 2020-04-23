@@ -1,14 +1,22 @@
 <!-- /templates/customers/order.liquid -->
-
+<div class="container">
+  <section>
+        <div class="breadcrumbs">
+          {% include 'breadcrumb-v3' %}
+        </div>
+        <!-- /.breadcrumbs -->
+        <!-- <h1 class="e-title text-center">{{ page_title }}</h1> -->
+      
+      <!-- /.cosre-page-title__main -->
+  <!-- /.cosre-page-title -->
+</section>
 <h1>{{ 'customer.account.title' | t }}</h1>
 
 <hr class="hr--small">
 
 <p><a href="/account">{{ 'customer.account.return' | t }}</a></p>
-
-<div class="grid">
-
-  <div class="grid__item two-thirds medium-down--one-whole">
+<div class="myaccount-order-content">
+  <div class="myaccount-order-table">
     <h4>{{ 'customer.order.title' | t: name: order.name }}</h4>
 
     <p>{{ 'customer.order.date' | t: date: order.created_at | date: "%B %d, %Y %I:%M%p" }}</p>
@@ -21,9 +29,9 @@
       </div>
     {% endif %}
 
-    <div class="table-wrap">
-      <table class="full">
-        <thead>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead class="thead-dark">
           <tr>
             <th>{{ 'customer.order.product' | t }}</th>
             <th>{{ 'customer.order.sku' | t }}</th>
@@ -91,8 +99,8 @@
 
   </div>
 
-  <div class="grid__item one-third medium-down--one-whole">
-
+  <div class="myaccount-order-billing">
+    <div class="myaccount-billing-child">
     <h4>{{ 'customer.order.billing_address' | t }}</h4>
 
     <p><strong>{{ 'customer.order.payment_status' | t }}:</strong> {{ order.financial_status_label }}</p>
@@ -130,7 +138,7 @@
       {{ order.shipping_address.country }}<br>
       {{ order.shipping_address.phone }}
     </p>
-
+    </div>
   </div>
-
+</div>
 </div>

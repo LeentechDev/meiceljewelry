@@ -943,6 +943,7 @@ li.fs-18 {
     }
 }
 .user-account {
+    cursor: pointer;
     .user-account-dropdown {
         display: none;
         position: absolute;
@@ -977,6 +978,26 @@ li.fs-18 {
             display: block;
         }
     }
+}
+.user-cart {
+    cursor: pointer;
+}
+.myaccount-order-content {
+    display: flex;
+    .myaccount-order-table {
+        width: 70%;
+        margin-right: 10%;
+    }
+    .myaccount-order-billing {
+        width: 30%;
+        background-color: #F3F6FA;
+        padding: 50px;
+    }
+}
+.thead-dark {
+    color: #fff;
+    background-color: #212529;
+    border-color: #32383e;
 }
 @media screen and (max-width:1400px){
     .slider-home-classic .text-slider {
@@ -1210,5 +1231,43 @@ li.fs-18 {
     }
     .h-article-img {
         height: 100%;
+    }
+    .myaccount {
+        flex-direction: column;
+        .myaccount-sidenav {
+            width: 100%;
+        }
+        .myaccount-content {
+            width: 100%;
+            margin-left: 0;
+            .myaccount-content-body {
+                .myaccount-account-orders {
+                    .myaccount-orders-detail{
+                        overflow: scroll;
+                    }
+                }
+            }
+        }
+    }
+    .address-container {
+        flex-direction: column;
+        .address-sidenav {
+            width: 100%;
+        }
+        .address-content {
+            width: 100%;
+             margin-left: 0;
+        }
+    }
+    .myaccount-order-content {
+        flex-direction: column;
+        .myaccount-order-table {
+            width: 100%;
+            margin-right: 0;
+            overflow: scroll;
+        }
+        .myaccount-order-billing {
+            width: 100%;
+        }
     }
 }
