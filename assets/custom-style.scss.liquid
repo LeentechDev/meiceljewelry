@@ -17,7 +17,11 @@ h3 {
     }
     .topbar-right{
         background-color: #0000;
-        display: none;
+        a {
+            font-size: 14px;
+            line-height: 24px;
+            font-weight: 400;
+        }
     }
 }
 #header .searchform input {
@@ -36,6 +40,10 @@ h3 {
 .navbar-nav.menu-main {
     width: 100%;
     display: flex;
+}
+.navbar-nav li .dropdown-menu li a:hover {
+    color: #fff;
+    background: #FC3F93;
 }
 .menu-main {
     li {
@@ -390,6 +398,22 @@ input.spr-button:hover {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    .account-input-value {
+        font-size: 16px;
+        line-height: 26px;
+        width: 100%;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        color: #555555;
+    }
+    p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    a {
+        font-size: 14px;
+        line-height: 24px; 
+    }
     .account-register {
         width: 50%;
         height: 500px;
@@ -405,6 +429,8 @@ input.spr-button:hover {
             background: #393D47;
             border: 1px solid #393D47;
             color: #fff;
+            font-size: 16px;
+            line-height: 26px;
         }
     }
     .account-login {
@@ -421,6 +447,8 @@ input.spr-button:hover {
             background: #393D47;
             border: 1px solid #393D47;
             color: #fff;
+            font-size: 16px;
+            line-height: 26px;
         }
     }
 }
@@ -999,6 +1027,35 @@ li.fs-18 {
     background-color: #212529;
     border-color: #32383e;
 }
+.mobile-tabs {
+    li.active {
+        background: linear-gradient(254.55deg, #FF85BB -5.06%, #FC3F93 58.76%) !important;
+        border-bottom: #fc3f93 !important;
+    }
+}
+.box-mobile-menu-inner .close-menu-mobile {
+    background: #4A4D50 !important;
+}
+.nav-home5 {
+    li {
+        a {
+            font-size: 16px !important;
+        }
+    }
+}
+.banner-close-btn {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 18px;
+}
+.scroll-top a {
+    display: none;
+}
+.messengermessageus--fixed {
+    bottom: 1vw !important;
+    right: 1vw !important;
+}
 @media screen and (max-width:1400px){
     .slider-home-classic .text-slider {
         padding: 0 100px;
@@ -1217,10 +1274,10 @@ li.fs-18 {
         }
     }
     .text-animate-1 {
-        font-size: 30px;
+        font-size: 28px;
     }
     .text-animate-2 {
-        font-size: 30px;
+        font-size: 28px;
     }
     .instafeed-container {
         width: 50% !important;
@@ -1269,5 +1326,17 @@ li.fs-18 {
         .myaccount-order-billing {
             width: 100%;
         }
+    }
+    .collection-promo-img {
+        height: 100%;
+    }
+    #btn-cart {
+        margin-left: 10px;
+    }
+    .banner-close-btn {
+        font-size: 16px;
+    }
+    .terms-container {
+        padding: 0;
     }
 }
