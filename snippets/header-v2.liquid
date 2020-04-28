@@ -33,7 +33,7 @@
         </form>
       </div>
       <div class="col-lg-6 col-md-7 col-sm-4 col-xs-4 header-midle flex logo_header">
-        <div class="flex center logo delay05">
+        <div class="flex center space_top_20 space_bot_20">
           {% if settings.hdv1_logo_svg != blank %}
           <div class="logosvg" style="max-width:{{settings.hdv1_logo_maxwidth}}px;">
             <a class="d-block" href="{{shop.url}}">{{settings.hdv1_logo_svg}}</a>
@@ -104,7 +104,7 @@
           {% endif %}
         </a>
 
-        {% if customer.email != blank %}
+        <!-- {% if customer.email != blank %}
         <a class="delay03 inline-block hidden-sm hidden-xs" href="/account/logout" title="logout">
           {% if settings.icon-logout == blank %}
           <i class="icon-power"></i>
@@ -128,8 +128,22 @@
           {% endif %}
           {% endif %}
         </a>
-        {% endif %}
-
+        {% endif %} -->
+        <!-- <a href="" class="dropdown delay03 inline-block hidden-sm hidden-xs" id="btn-login">
+          {% if settings.style_icon_login == "icon" %}
+          {% if settings.icon-login == blank %}
+          <i class="zoa-icon-user"></i>
+          {% else %}
+          <i class="{{ settings.icon-login }}"></i>
+          {% endif %}
+          {% else %}
+          {% if settings.image_login == blank %}
+          <img src="{{'iconlogin2.png' | asset_url}}" class="img-responsive">
+          {% else %}
+          <img src="{{settings.image_login | img_url:'master'}}" class="img-responsive">
+          {% endif %}
+          {% endif %}
+        </a>
         <a href="#" class="delay03 relative inline-block text-center icon-cart" id="btn-cart">
           {% if settings.style_icon_cart == "icon" %}
           {% if settings.icon-cart == blank %}
@@ -145,8 +159,48 @@
           {% endif %}
           {% endif %}
           <figure class="absolute label-cart enj-cartcount">{{ cart.item_count }}</figure>
-        </a>
-
+        </a> -->
+        <div class="user-account delay03 inline-block hidden-sm hidden-xs margin_right_10">
+          {% if settings.style_icon_login == "icon" %}
+          {% if settings.icon-login == blank %}
+          <i class="zoa-icon-user"></i>
+          {% else %}
+          <i class="{{ settings.icon-login }}"></i>
+          {% endif %}
+          {% else %}
+          {% if settings.image_login == blank %}
+          <img src="{{'iconlogin2.png' | asset_url}}" class="img-responsive">
+          {% else %}
+          <img src="{{settings.image_login | img_url:'master'}}" class="img-responsive">
+          {% endif %}
+          {% endif %}
+          <div class="user-account-dropdown">
+            {% if customer.email != blank %}
+              <p>Welcome {{ customer.name }}</p>
+              <a class="delay03" href="/account">My Account</a>
+              <a class="delay03" href="/account/logout">Log out</a>
+            {% else %}
+              <a class="delay03" href="/account/login">Login</a>
+              <a class="delay03" href="/account/login">Register</a>
+            {% endif %}
+          </div>
+        </div>
+        <div class="user-cart delay03 relative inline-block text-center icon-cart" id="btn-cart">
+          {% if settings.style_icon_cart == "icon" %}
+          {% if settings.icon-cart == blank %}
+          <i class="icon-bag"></i>
+          {% else %}
+          <i class="{{ settings.icon-cart }}"></i>
+          {% endif %}
+          {% else %}
+          {% if settings.image_cart == blank %}
+          <img src="{{'iconcar2.png' | asset_url}}" class="img-responsive">
+          {% else %}
+          <img src="{{settings.image_cart | img_url:'master'}}" class="img-responsive">
+          {% endif %}
+          {% endif %}
+          <figure class="absolute label-cart enj-cartcount">{{ cart.item_count }}</figure>
+        </div>
       </div>
     </div>
     <div class="row" style="padding-bottom: 5px;">

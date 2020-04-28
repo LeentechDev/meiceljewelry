@@ -1385,7 +1385,9 @@ for (i = 0; i < acc.length; i++) {
   $(window).load(function(){
   $('.shopify-payment-button__button').addClass('btn-disabled');
 });
-  
+  $('.banner-close-btn').on('click', function(){
+    $('.topbar').css('display','none');
+  });
 });
 
 

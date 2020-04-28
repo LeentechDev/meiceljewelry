@@ -13,7 +13,7 @@
                 {% include 'ciloe-login-mobile' %}
             </div>
             <div class="box-tabs-nav-wrap">
-                <ul class="tabs">
+                <ul class="tabs mobile-tabs">
                     <li class="active">
                         <a data-toggle="tab" href="#home">
                             <div  class="ciloe-icon-menu">
@@ -22,7 +22,18 @@
                             <span class="nav-text">Menu</span>
                         </a>
                     </li>
-                    <li><a data-toggle="tab" href="#menu1"><i class="zoa-icon-user"></i><span class="nav-text">Login</span></a></li>
+                    <li>
+                    <a data-toggle="tab" href="#menu1">
+                        <i class="zoa-icon-user"></i>
+                        <span class="nav-text">
+                            {% if customer.email != blank %}
+                                My Account
+                            {% else %}
+                                Login
+                            {% endif %}
+                        </span>
+                    </a>
+                    </li>
                 </ul>
             </div>
         </div>
