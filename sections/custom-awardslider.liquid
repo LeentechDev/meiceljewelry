@@ -1,7 +1,7 @@
 <div data-section-id="{{ section.id }}" data-section-type="slide-v1" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
     <!--slide-->
     <div class="container">
-        <h1 style="text-align: center;width: 50%;margin: 50px auto;">{{ section.settings.custom_slider_title }}</h1>
+        <h1 class="custom-slider-title">{{ section.settings.custom_slider_title }}</h1>
       <div class="custom-award-slider margin_bottom_50 multiple-items">
         {% if section.blocks.size > 0 %}
           {% for block in section.blocks %}
