@@ -1,0 +1,110 @@
+<div class="BG-section margin_bottom_80 Testimonal">
+    <div class="ciloe-title-section  container relative margin_top_50">
+        <h2 class="h-testimonial-text margin_bottom_10 text-center fw-500">{{section.settings.title}}</h2>
+      </div>
+    <div class="slick-testimonial custom-testimonal">
+      {% if section.blocks.size > 0 %}
+      {% for block in section.blocks %}
+      {% if block.type == 'testimonia' %}
+      <!-- <div class="content-tes text-center">
+        <img src="{{block.settings.img_tes | img_url:'master'}}" class="custom-testi-img">
+        <p class="name space_top_20">{{block.settings.name}}<br><span class="space_top_10">{{block.settings.name1}}</span></p>
+        <h4 class="content-tes space_top_50">{{block.settings.content-tes}}</h4>
+      </div> -->
+      <div class="custom-testimonal-text-holder relative delay03 text-center">
+        <p class="des-comment space_top_50 space_bot_50 color-text">{{block.settings.content-tes}}</p>
+        {% if block.settings.img_tes != blank %}
+            <img src="{{block.settings.img_tes | img_url:'104x104'}}" class="img-responsive" style="margin: 0 auto;">
+        {% endif %}
+        <div class="flex center space_top_30 space_bot_30">
+        <p class="author-comment color-text capital fw-700">{{block.settings.name}}</p> <span class="capital model fw-500 lt-1">{{block.settings.infor}}</span>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+      {% endif %}
+    </div>
+
+  </div>
+  <style>
+      .slick-next {
+          right: -55px;
+          width: 50px;
+          height: 50px;
+          border: 1px solid #393D47;
+      }
+      .slick-next:hover {
+        border: none;
+        background: #fc3f93;
+        color: #fff;
+      }
+      .slick-prev {
+          left: -55px;
+          width: 50px;
+          height: 50px;
+          border: 1px solid #393D47;
+      }
+      .slick-prev:hover {
+        border: none;
+        background: #fc3f93;
+        color: #fff;
+      }
+      .custom-testi-img {
+          margin: 0 auto;
+      }
+  </style>
+{% schema %}
+  {
+    "name": "Custom Testimonial",
+    "settings" : [
+        {
+            "type": "header",
+            "content": "Section Space"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "testimonial"
+        }
+    ],
+    "blocks": [
+    {
+      "type": "testimonia",
+      "name": "About Testimonial",
+      "settings": [
+          {
+            "type": "image_picker",
+          	"id": "img_tes",
+          	"label": "Image brand",
+			"info": "48 x 39px recommended"
+          },
+    {
+      "type": "text",
+      "id": "name",
+      "label": "Name 1",
+      "default": "Mark Collins"
+    },
+    {
+      "type": "text",
+      "id": "name1",
+      "label": "Name 2",
+      "default": "Arizona"
+    },
+    {
+      "type": "text",
+      "id": "content-tes",
+      "label": "Content",
+      "default": "“To be honest, this is one of the best interior store. They have a lot of things for you to explore. The price is reasonable and customer service is dedicated.”"
+    }
+]
+}
+  ],
+  "presets": [
+    {
+      "name": "Custom Testimonal",
+      "category": "Custom Section"
+    }
+  ]
+  }
+  {% endschema %}

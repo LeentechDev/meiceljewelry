@@ -206,23 +206,26 @@ a.btn-slider.btn-banner5 {
 .footer-v4 {
     padding-top: 80px;
     padding-bottom: 0;
+    ul, li {
+        line-height: 24px;
+    }
     .fv4-social-icon {
         background: #F3F6FA;
-        margin-left: 20px;
-        padding: 5px;
+        margin-left: 10px;
+        padding: 10px;
         &:nth-child(1) {
             margin-left: 0;
         }
     }
     li {
-        
+        color: #4A4D50;
         a {
-            color: #000000;
-            line-height: 24px;
+            color: #4A4D50;
         }
     }
     .social {
         a {
+            font-size: 16px;
             &:hover {
                 color: #000000 !important;
             }
@@ -245,7 +248,10 @@ a.btn-slider.btn-banner5 {
         background-color: #393D47;
         color: #fff;
         font-size: 15px;
-        margin-left: 5px;
+        margin-left: 10px;
+        &:hover {
+            background: #FC3F93;
+        }
     }
 }
 .bottom-footer {
@@ -652,6 +658,8 @@ li.fs-18 {
     .slick-next {
         width: 50px;
         height: 50px;
+        background: transparent;
+        border: 1px solid #393D47;
         &:before {
             font-size: 30px;
         }
@@ -664,6 +672,8 @@ li.fs-18 {
     .slick-prev {
         width: 50px;
         height: 50px;
+        background: transparent;
+        border: 1px solid #393D47;
         &:before {
             font-size: 30px;
         }
@@ -1158,6 +1168,33 @@ li.fs-18 {
     margin: 70px auto; 
     line-height: 48px;
 }
+.slider-home-classic .js-slider-home-classic .slick-dots li.slick-active {
+    a {
+        color: #fff !important;
+    }
+    &:before {
+        background: #fff !important;
+    }
+}
+.custom-testimonal {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    .des-comment {
+        width: 80%;
+        margin: 0 auto;
+        font-weight: 300;
+        color: #4A4D50;
+        font-size: 18px;
+        line-height: 40px;
+    }
+    .author-comment {
+        font-weight: 600;
+    }
+}
 @media screen and (max-width:1400px){
     .slider-home-classic .text-slider {
         padding: 0 100px;
@@ -1454,5 +1491,8 @@ li.fs-18 {
     .custom-slider-title {
         width: 100%;
         margin: 20px auto;
+    }
+    .custom-testimonal {
+        width: 100%;
     }
 }
