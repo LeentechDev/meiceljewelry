@@ -21,7 +21,7 @@
     </div>
       {% endcomment %}
 <!--      -->
-      <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 btn_function text-center ">
+      <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4 btn_function text-center ">
       </div>
 <!--      -->
       {% comment %}
@@ -38,7 +38,7 @@
     </div>
        {% endcomment %}
 <!--      -->
-    <div class="col-lg-3 col-md-3 btn_function left">
+    <div class="col-lg-4 col-md-3 btn_function left">
       <div class="wrap-filter-sorting">
         <div class="dropdown">
           <button class="dropdown-toggle text-left" data-toggle="dropdown" aria-expanded="false">
@@ -48,45 +48,45 @@
           <ul class="dropdown-menu">
             <li><a href="manual">{{ 'collections.sorting.featured' | t }}</a></li>   
             <li><a href="best-selling">{{ 'collections.sorting.best_selling' | t }}</a></li>
-            <li><a href="title-ascending">{{ 'collections.sorting.az' | t }}</a></li>
-            <li><a href="title-descending">{{ 'collections.sorting.za' | t }}</a></li>
-            <li><a href="price-descending">{{ 'collections.sorting.price_descending' | t }}</a></li>
-            <li><a href="price-ascending">{{ 'collections.sorting.price_ascending' | t }}</a></li>
-            <li><a href="created-ascending">{{ 'collections.sorting.date_ascending' | t }}</a></li>
-            <li><a href="created-descending">{{ 'collections.sorting.date_descending' | t }}</a></li>
+            <li><a href="title-ascending">Alphabetically (A-Z)</a></li>
+            <li><a href="title-descending">Alphabetically (Z-A)</a></li>
+            <li><a href="price-descending">Price (High to Low)</a></li>
+            <li><a href="price-ascending">Price (Low to High)</a></li>
+            <li><a href="created-ascending">Date Added (New-Old)</a></li>
+            <li><a href="created-descending">Date Added (Old-New)</a></li>
           </ul>
         </div>
       </div>
     </div>
           <div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 btn_function text-center filter-button ">
-        <h4 class="btn_filter_full" data-click-state="0"><img src="{{'filter.png'| asset_url}}" alt="filter" style="margin-right: 5px;">{{section.settings.icon_filter}}</h4>
+        <h4 class="btn_filter_full" data-click-state="0"><img src="{{'filter.png'| asset_url}}" alt="filter" style="margin-right: 10px;">{{section.settings.icon_filter}}</h4>
     </div>
     </div>
     <div class="filter_full col-md-12 over-hidden delay05 engoj-collection-sidebar">
-      <div class="content_filter_full row" >
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 space_bot_20">
+      <div class="content_filter_full filter-board" >
+        <div class="filter-child space_bot_20">
           {% include 'ciloe-filter-cate' %}
         </div>
 		<!--          -->
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 space_bot_20">
+        <div class="filter-child space_bot_20">
           {% include 'ciloe-filter-color' %}
         </div>
 		<!--          -->
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 space_bot_20">
+        <div class="filter-child space_bot_20">
           {% include 'ciloe-filter-size' %}
         </div>
 		<!--          -->
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 space_bot_20">
+        <div class="filter-child space_bot_20">
+          {% include 'ciloe-filter-tag' %}
+        </div>
+        <!--          -->
+        <div class="filter-child space_bot_20">
           {% include 'ciloe-filter-price' %}
         </div>
 		<!--          -->
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 space_bot_20">
-          {% include 'ciloe-filter-tag' %}
-        </div>
-		<!--          -->
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 space_bot_20">
+        <!-- <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 space_bot_20">
           {% include 'ciloe-filter-sort' %}
-        </div>
+        </div> -->
 		<!--          -->
       </div>
     </div>
