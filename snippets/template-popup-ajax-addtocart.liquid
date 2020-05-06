@@ -9,7 +9,8 @@
   <div class="overlay"></div>
   <div class="content box-shadow v2">
     <a href="javascript:void(0)" class="close-window fr">
-      <i class="fa fa-close"></i>
+      <!-- <i class="fa fa-close"></i> -->
+      <img alt="img" src="{{'pop_close.png' | asset_url}}"/>
     </a>
     <div class="mini-product-item row">
       <div class="col-md-3 col-sm-3 product-image f-left">
@@ -17,7 +18,8 @@
       </div>
       <div class="col-md-9 col-sm-9 f-left">
         <div class="product-info-ver2 f-left">
-          <p class="product-name"></p>
+          <!-- <p class="product-name"></p> -->
+          <p class="popout-productname">{{ product.title }}</p>
           <p class="success-message">{{ 'popup.cart' | t }}</p>
 
         </div>

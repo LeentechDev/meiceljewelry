@@ -250,7 +250,8 @@ var ajaxCart = (function(module, $) {
 
     if (!!data.message) {
       if (data.status == 422) {
-        $formContainer.after('<div class="errors qty-error">'+ data.description +'</div>')
+        // $formContainer.after('<div class="errors qty-error product-error">'+ data.description +'</div>')
+        $('.single-product-button-group').before('<div class="errors qty-error product-error">'+ data.description +'</div>')
       }
     }
   };
