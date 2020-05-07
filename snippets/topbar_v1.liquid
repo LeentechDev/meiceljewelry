@@ -40,7 +40,7 @@
           {% endif %}
         </div>
       </div>
-        <div class="topbar-center">
+        <div class="topbar-center topbar-promo-text">
           <div class="hidden-xs hidden-sm">
             <span class="">{{settings.topbar_text4_center}}</span>
           </div>
@@ -51,27 +51,20 @@
         </div>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 hidden-xs flex-right">
-        {% if customer.email == blank %}
+        <!-- {% if customer.email == blank %}
         <div class="topbar-right">
           <div class="element element_v7 hidden-xs hidden-sm">
-            <!-- <a href="{{settings.topbar_text5_url}}">{{settings.topbar_text5}} </a> -->
             <a href="/account/login" class="topbar-account">Login</a>
           </div>
           <div class="element element_v7 hidden-xs hidden-sm">
-            <!-- <a href="{{settings.topbar_text4_url}}">
-              <span>{{settings.topbar_text4}}</span>
-            </a> -->
             <a href="/account/login" class="topbar-account">Register</a>
           </div>
-          <!-- <div class="element element_v7 hidden-xs hidden-sm" style="padding-right: 0;">
-            <a href="{{settings.topbar_text3_url}}">{{settings.topbar_text3}}</a>
-          </div> -->
         </div>
         {% else %}
-        <div class="element element_v7 hidden-xs hidden-sm" style="float:right;">
+        <div class="element element_v7 topbar-right-text hidden-xs hidden-sm">
           <a href="/account" class="topbar-account">My Account</a>
         </div>
-        {% endif %}
+        {% endif %} -->
       </div>
     </div>
   </div>

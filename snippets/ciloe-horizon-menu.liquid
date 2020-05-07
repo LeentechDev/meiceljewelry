@@ -20,11 +20,12 @@
       {% if link.title contains '[' %}
       {%- assign label  = link.title | split: '[' | last  | split: ']' | first -%}  
       {%- assign bgc  = link.title | split: '(' | last  | split: ')' | first -%}
-      <a href="{{ link.url }}" title="{{link.title | split: '[' | first }}" class="delay03  {% if settings.clear_left %} clear_left {% endif %}">{{link.title | split: '[' | first }}
+      <a href="{{ link.url }}"  class="parent-link delay03 {% if link.active %}current{% endif %} {% if settings.clear_left %} clear_left {% endif %}">{{link.title | split: '[' | first }}
+        {% if link.active %} <div class="current-nav"></div> {% endif %}
         <span class="absolute label_menu {% if link.title contains '('%} e-{{bgc}} {%else%} e-red {%endif%}">{{label}}</span>
       </a>
       {%else%}
-      <a href="{{ link.url }}" title="{{link.title | split: '[' | first }}" class="delay03  {% if settings.clear_left %} clear_left {% endif %}">{{link.title | split: '[' | first }}</a>
+      <a href="{{ link.url }}" class="parent-link delay03 {% if link.active %}current{% endif %} {% if settings.clear_left %} clear_left {% endif %}">{{link.title | split: '[' | first }}{% if link.active %} <div class="current-nav"></div> {% endif %}</a>
       {%endif%}
       <div class="dropdown-menu mega-menu-main absolute space_30 space_top_bot_50 text-left mega-menu-shop bg-mega-menu1">
         <div class="relative row">
@@ -51,11 +52,12 @@
       {% if link.title contains '[' %}
       {%- assign label  = link.title | split: '[' | last  | split: ']' | first -%}  
       {%- assign bgc  = link.title | split: '(' | last  | split: ')' | first -%}
-      <a href="{{ link.url }}" title="{{link.title | split: '[' | first }}" class="delay03 ">{{link.title | split: '[' | first }}
+      <a href="{{ link.url }}" class="parent-link delay03 {% if link.active %}current{% endif %}">{{link.title | split: '[' | first }}
+        {% if link.active %} <div class="current-nav"></div> {% endif %}
         <span class="absolute label_menu {% if link.title contains '('%} e-{{bgc}} {%else%} e-red {%endif%}">{{label}}</span>
       </a>
       {%else%}
-      <a href="{{ link.url }}" title="{{link.title | split: '[' | first }}" class="delay03 ">{{link.title | split: '[' | first }}</a>
+      <a href="{{ link.url }}" class="parent-link delay03 {% if link.active %}current{% endif %}">{{link.title | split: '[' | first }}{% if link.active %} <div class="current-nav"></div> {% endif %}</a>
       {%endif%}
 
       <div class="dropdown-menu mega-menu-main absolute space_30 space_top_bot_50 text-left mega-menu-shop bg-mega-menu2">
@@ -73,11 +75,11 @@
                   {% if link.title contains '[' %}
                   {%- assign label  = link.title | split: '[' | last  | split: ']' | first -%}  
                   {%- assign bgc  = link.title | split: '(' | last  | split: ')' | first -%}
-                  <a href="{{ link.url }}" title="{{link.title | split: '[' | first }}" class="delay03  relative">{{link.title | split: '[' | first }}
+                  <a href="{{ link.url }}" class="parent-link delay03  relative">{{link.title | split: '[' | first }}
                     <span class="absolute label_menu {% if link.title contains '('%} e-{{bgc}} {%else%} e-red {%endif%}">{{label}}</span>
                   </a>
                   {%else%}
-                  <a href="{{ link.url }}" title="{{link.title | split: '[' | first }}" class="delay03 ">{{link.title | split: '[' | first }}</a>
+                  <a href="{{ link.url }}" class="parent-link delay03 {% if link.active %}current{% endif %}">{{link.title | split: '[' | first }}{% if link.active %} <div class="current-nav"></div> {% endif %}</a>
                   {%endif%}
                 </li>
                 {% endfor %}
@@ -94,11 +96,12 @@
       {% if link.title contains '[' %}
       {%- assign label  = link.title | split: '[' | last  | split: ']' | first -%}  
       {%- assign bgc  = link.title | split: '(' | last  | split: ')' | first -%}
-      <a href="{{ link.url }}" title="{{link.title | split: '[' | first }}" class="delay03 ">{{link.title | split: '[' | first }}
+      <a href="{{ link.url }}" class="parent-link delay03 {% if link.active %}current{% endif %}">{{link.title | split: '[' | first }}
+        {% if link.active %} <div class="current-nav"></div> {% endif %}
         <span class="absolute label_menu {% if link.title contains '('%} e-{{bgc}} {%else%} e-red {%endif%}">{{label}}</span>
       </a>
       {%else%}
-      <a href="{{ link.url }}" title="{{link.title | split: '[' | first }}" class="delay03 ">{{link.title | split: '[' | first }}</a>
+      <a href="{{ link.url }}" class="parent-link delay03 {% if link.active %}current{% endif %}">{{link.title | split: '[' | first }}{% if link.active %} <div class="current-nav"></div> {% endif %}</a>
       {%endif%}
 
       <div class="dropdown-menu mega-menu-main absolute space_30 space_top_bot_50 text-left mega-menu-shop-2column bg-mega-menu3">
@@ -117,11 +120,12 @@
                   {% if link.title contains '[' %}
                   {%- assign label  = link.title | split: '[' | last  | split: ']' | first -%}  
                   {%- assign bgc  = link.title | split: '(' | last  | split: ')' | first -%}
-                  <a href="{{ link.url }}" title="{{link.title | split: '[' | first }}" class="delay03  relative">{{link.title | split: '[' | first }}
+                  <a href="{{ link.url }}" class="parent-link delay03  relative">{{link.title | split: '[' | first }}
+                    {% if link.active %} <div class="current-nav"></div> {% endif %}
                     <span class="absolute label_menu {% if link.title contains '('%} e-{{bgc}} {%else%} e-red {%endif%}">{{label}}</span>
                   </a>
                   {%else%}
-                  <a href="{{ link.url }}" title="{{link.title | split: '[' | first }}" class="delay03 ">{{link.title | split: '[' | first }}</a>
+                  <a href="{{ link.url }}" class="parent-link delay03 {% if link.active %}current{% endif %}">{{link.title | split: '[' | first }}{% if link.active %} <div class="current-nav"></div> {% endif %}</a>
                   {%endif%}
                 </li>
                 {% endfor %}
@@ -136,7 +140,7 @@
     {% elsif settings[_mega_style_select] == "m_s4" %}
 
     <li class="relative dropdown">
-      <a href="{{ link.url }}" title="{{link.title}}">{{link.title}}
+      <a href="{{ link.url }}">{{link.title}}
         {% capture _menu_label %}
         {%  if _sale_handles contains link.handle %}{{_sale_menu_html}}{% endif %}
         {%  if _new_handles contains link.handle %}{{_new_menu_html}}{% endif %}
@@ -166,11 +170,12 @@
       {% if link.title contains '[' %}
       {%- assign label  = link.title | split: '[' | last  | split: ']' | first -%}  
       {%- assign bgc  = link.title | split: '(' | last  | split: ')' | first -%}
-      <a href="{{ link.url }}" title="{{link.title | split: '[' | first }}" class="delay03 ">{{link.title | split: '[' | first }}
+      <a href="{{ link.url }}" class="parent-link delay03 ">{{link.title | split: '[' | first }}
+        {% if link.active %} <div class="current-nav"></div> {% endif %}
         <span class="absolute label_menu {% if link.title contains '('%} e-{{bgc}} {%else%} e-red {%endif%}">{{label}}</span>
       </a>
       {%else%}
-      <a href="{{ link.url }}" title="{{link.title | split: '[' | first }}" class="delay03 ">{{link.title | split: '[' | first }}</a>
+      <a href="{{ link.url }}" class="parent-link delay03 ">{{link.title | split: '[' | first }}{% if link.active %} <div class="current-nav"></div> {% endif %}</a>
       {%endif%}
       {% if link.links != blank %}
       <ul class="dropdown-menu">
@@ -187,11 +192,12 @@
       {% if link.title contains '[' %}
       {%- assign label  = link.title | split: '[' | last  | split: ']' | first -%}  
       {%- assign bgc  = link.title | split: '(' | last  | split: ')' | first -%}
-      <a href="{{ link.url }}" title="{{link.title | split: '[' | first }}" class="delay03 " target="_blank">{{link.title | split: '[' | first }}
+      <a href="{{ link.url }}" class="parent-link delay03 {% if link.active %}current{% endif %}" >{{link.title | split: '[' | first }}
+        {% if link.active %} <div class="current-nav"></div> {% endif %}
         <span class="absolute label_menu {% if link.title contains '('%} e-{{bgc}} {%else%} e-red {%endif%}">{{label}}</span>
       </a>
       {%else%}
-      <a href="{{ link.url }}" title="{{link.title | split: '[' | first }}" class="delay03 " target="_blank">{{link.title | split: '[' | first }}</a>
+      <a href="{{ link.url }}" class="parent-link delay03 {% if link.active %}current{% endif %}" >{{link.title | split: '[' | first }}{% if link.active %} <div class="current-nav"></div> {% endif %}</a>
       {%endif%}
     </li>
     {% endif %}

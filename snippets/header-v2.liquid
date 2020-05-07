@@ -1,4 +1,4 @@
-<header id="header" class="header-v2 delay05 {% if settings.enable_fix_hdv2 %}fixed{% endif %}">
+<header id="header" class="header-v2 main-header{% if settings.enable_fix_hdv2 %}fixed{% endif %}">
   {%include 'topbar_v1'%}
   <div class="container">
     <div class="row flex">
@@ -103,63 +103,6 @@
           {% endif %}
           {% endif %}
         </a>
-
-        <!-- {% if customer.email != blank %}
-        <a class="delay03 inline-block hidden-sm hidden-xs" href="/account/logout" title="logout">
-          {% if settings.icon-logout == blank %}
-          <i class="icon-power"></i>
-          {% else %}
-          <i class="{{ settings.icon-logout }}"></i>
-          {% endif %}
-        </a>
-        {% else %}
-        <a href="/account/login" class="delay03 inline-block hidden-sm hidden-xs" id="btn-login">
-          {% if settings.style_icon_login == "icon" %}
-          {% if settings.icon-login == blank %}
-          <i class="zoa-icon-user"></i>
-          {% else %}
-          <i class="{{ settings.icon-login }}"></i>
-          {% endif %}
-          {% else %}
-          {% if settings.image_login == blank %}
-          <img src="{{'iconlogin2.png' | asset_url}}" class="img-responsive">
-          {% else %}
-          <img src="{{settings.image_login | img_url:'master'}}" class="img-responsive">
-          {% endif %}
-          {% endif %}
-        </a>
-        {% endif %} -->
-        <!-- <a href="" class="dropdown delay03 inline-block hidden-sm hidden-xs" id="btn-login">
-          {% if settings.style_icon_login == "icon" %}
-          {% if settings.icon-login == blank %}
-          <i class="zoa-icon-user"></i>
-          {% else %}
-          <i class="{{ settings.icon-login }}"></i>
-          {% endif %}
-          {% else %}
-          {% if settings.image_login == blank %}
-          <img src="{{'iconlogin2.png' | asset_url}}" class="img-responsive">
-          {% else %}
-          <img src="{{settings.image_login | img_url:'master'}}" class="img-responsive">
-          {% endif %}
-          {% endif %}
-        </a>
-        <a href="#" class="delay03 relative inline-block text-center icon-cart" id="btn-cart">
-          {% if settings.style_icon_cart == "icon" %}
-          {% if settings.icon-cart == blank %}
-          <i class="icon-bag"></i>
-          {% else %}
-          <i class="{{ settings.icon-cart }}"></i>
-          {% endif %}S
-          {% else %}
-          {% if settings.image_cart == blank %}
-          <img src="{{'iconcar2.png' | asset_url}}" class="img-responsive">
-          {% else %}
-          <img src="{{settings.image_cart | img_url:'master'}}" class="img-responsive">
-          {% endif %}
-          {% endif %}
-          <figure class="absolute label-cart enj-cartcount">{{ cart.item_count }}</figure>
-        </a> -->
         <div class="user-account delay03 inline-block hidden-sm hidden-xs margin_right_10">
           {% if settings.style_icon_login == "icon" %}
           {% if settings.icon-login == blank %}
@@ -181,7 +124,7 @@
               <a class="delay03" href="/account/logout">Log out</a>
             {% else %}
               <a class="delay03" href="/account/login">Login</a>
-              <a class="delay03" href="/account/login">Register</a>
+              <a class="delay03" href="/account/register">Register</a>
             {% endif %}
           </div>
         </div>

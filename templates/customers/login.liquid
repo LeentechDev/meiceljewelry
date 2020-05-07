@@ -1,26 +1,12 @@
 <div class="container">
-  <div class="account-holder margin_top_10 margin_bottom_10">
+  <div class="account-holder margin_top_70 margin_bottom_50">
     <div class="account-register">
       <div class="account-input-holder">
-        <h2>Register</h2>
-        <p class="margin_top_20">Create your own account.</p>
-        {% form 'create_customer' %}
-          {{ form.errors | default_errors }}
-          <div class="login-form margin_top_30"> 
-              <div class="form-group account-input">
-                  <input type="text" class="account-input-value bdr margin_bottom_20" name="customer[first_name]" class="{% if form.errors contains 'first_name' %} input--error{% endif %}" {% if form.first_name %} value="{{ form.first_name }}"{% endif %} autocorrect="off" autocapitalize="off" placeholder="First Name">
-                  <input type="text" class="account-input-value bdr margin_bottom_20" name="customer[last_name]" class="{% if form.errors contains 'last_name' %} input--error{% endif %}" {% if form.last_name %} value="{{ form.last_name }}"{% endif %} autocorrect="off" autocapitalize="off" placeholder="Last Name">
-                  <input type="email" class="account-input-value bdr margin_bottom_20" name="customer[email]" class="{% if form.errors contains 'email' %} input--error{% endif %}" {% if form.email %} value="{{ form.email }}"{% endif %} autocorrect="off" autocapitalize="off" placeholder="Email">
-                  <input type="password" class="account-input-value bdr" name="customer[password]" value="" class="{% if form.errors contains 'password' %} input--error{% endif %}" placeholder="Password">
-              </div>
-              <div class="flex lr">
-                <button type="submit" class="account-btn-submit">
-                  <!-- {{ 'customer.register.submit' | t }} -->
-                  Create an account
-                </button>
-            </div>
-          </div>
-        {% endform %}
+        <h2>New Customer</h2>
+        <p class="margin_top_20">By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+        <a href="/account/register">
+          <button class="account-btn-submit">Create an Account</button>
+        </a>
       </div>
     </div>
     <div class="account-login">
@@ -35,9 +21,9 @@
             <div class="margin_top_30">
             <div class="login-form">
               <div class="form-group account-input">
-                <input type="email" class="account-input-value bdr margin_bottom_20" name="customer[email]" placeholder="Email">
+                <input type="email" class="account-input-value bdr {% if form.errors contains 'email' %}input--error{% endif %} margin_bottom_20" name="customer[email]" placeholder="Email">
               {% if form.password_needed %}
-                <input type="password" class="account-input-value bdr margin_bottom_20" name="customer[password]" placeholder="Password">
+                <input type="password" class="account-input-value bdr {% if form.errors contains 'password' %}input--error{% endif %} margin_bottom_40" name="customer[password]" placeholder="Password">
               {% endif %}
               {% if form.password_needed %}
                 <a href="#recover" class="RecoverPassword" style="color: #7B7B7B;">Forgot your password?</a>
@@ -73,8 +59,10 @@
               <div class="form-group account-input">
                 <input type="email" class="account-input-value form-account" value="" name="email" placeholder="Email" class="input-full"autocorrect="off" autocapitalize="off">
               </div>
-                <button class="account-btn-submit">{{ 'customer.recover_password.submit' | t }}</button>  
-                <button class="account-btn-submit margin_top_20 HideRecoverPasswordLink">{{ 'customer.recover_password.cancel' | t }}</button>  
+                <div class="reset-btn-holder">
+                  <button class="reset-btn">{{ 'customer.recover_password.submit' | t }}</button>  
+                  <button class="reset-btn HideRecoverPasswordLink">{{ 'customer.recover_password.cancel' | t }}</button>
+                </div>  
               {% endform %}
             </div>
           </div>
