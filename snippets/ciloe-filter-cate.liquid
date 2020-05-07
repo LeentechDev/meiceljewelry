@@ -1,12 +1,16 @@
-<div class="filter margin_bottom_30 space_bot_30 ">
+<div class="filter  space_bot_30  filter-tag">
   <div class="flex margin_bottom_20">
-    <h4 class="fz-14 widget_title lt-2">{{section.settings.title_cate}}</h4>
+    <h4 class="fz-14 widget_title ">{{section.settings.title_cate}}</h4>
   </div>
-  <ul class="filter-brand" style="max-height: 200px;overflow: auto;">
-    {% for collection in collections %}
-    <li {% if collection_title == collection.title %}class="active" {% endif %}>
-      <a href="{{ collection.url }}" title="{{ collection.title }}">{{ collection.title }} </a>
-    </li>
-    {% endfor %}
+  <ul class="filter-brand">
+    {% assign tags = section.settings.shop_by_categ_list_tags | split: ',' %}
+
+    {% for t in tags %}
+    {% assign tag = t | strip %}
+    {% assign tag_value = tag | handleize %}
+    <li class="cat-item{% if current_tags contains tag %} current-cat{% endif %}">
+      <input class="hidden" type="checkbox" value="{{ tag_value | split: '|' | first }}" {% if current_tags contains tag %}checked{% endif %}/>
+      <a href="javascript:void(0)" title="{{tag}}">{{tag}}</a>
+      {% endfor %}
   </ul>
 </div>

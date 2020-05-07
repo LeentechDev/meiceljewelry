@@ -234,8 +234,9 @@ var ajaxCart = (function(module, $) {
     var $addToCart_btn = $(form).find(settings.addToCartSelector);
     $addToCart_btn.removeClass('is-adding').addClass('is-added');
     $addToCart_btn.find('.enj-loader-add-to-cart').html('<i class="fa fa-check"></i>');
-    
-    $('.product-popup').find('.product-name').html(product.title);
+    var product_title = product.title;
+    var productname = product_title.split(" ");
+    $('.product-popup').find('.product-name').html(productname[0]);
     $('.product-popup').find('.product-image img').attr('src', product.image);
 
     showPopup('.product-popup');
@@ -246,12 +247,19 @@ var ajaxCart = (function(module, $) {
   itemErrorCallback = function (XMLHttpRequest, textStatus) {
     var data = eval('(' + XMLHttpRequest.responseText + ')');
     $addToCart.removeClass('is-adding is-added');
-    $addToCart.find('.enj-loader-add-to-cart').remove();
+    $addToCart.find('.enj-loader-add-to-cart').html('<i class="fa fa-times"></i>');
 
     if (!!data.message) {
       if (data.status == 422) {
         // $formContainer.after('<div class="errors qty-error product-error">'+ data.description +'</div>')
-        $('.single-product-button-group').before('<div class="errors qty-error product-error">'+ data.description +'</div>')
+        var getUrl = window.location.pathname;
+        var urlValidator = getUrl.split("/");
+        if (urlValidator.length <= 4) {
+          $('.content_shop').before('<div class="container"><div class="errors qty-error product-error">'+ data.description +'</div></div>')
+        }
+        else {
+          $('.single-product-button-group').before('<div class="errors qty-error product-error">'+ data.description +'</div>')
+        }
       }
     }
   };
