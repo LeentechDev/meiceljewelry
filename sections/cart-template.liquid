@@ -118,7 +118,7 @@ For info on test orders:
                           <div class=" medium-up--one-half ">
                               <!-- <label for="CartSpecialInstructions" class="cart-note cart-note_text_label">{{ 'cart.general.note' | t }}</label> -->
                               <p class="margin_top_10 margin_bottom_10" style="text-align: left; font-weight: 500; color: #7B7B7B;">{{ 'cart.general.note' | t }}</p>
-                              <textarea rows="6" name="note" id="CartSpecialInstructions" class="cart-note__input form-control note--input" placeholder="Type here...">{{ cart.note }}</textarea>
+                              <textarea rows="6" name="note" id="CartSpecialInstructions" class="cart-textarea cart-note__input form-control note--input" placeholder="Type here...">{{ cart.note }}</textarea>
                           </div>
                         </div>
                       	{%endif %}
@@ -132,10 +132,11 @@ For info on test orders:
                                 </tr>
                             </tbody>
                         </table>
-                        <p class="margin_top_10 margin_bottom_10" style="width: 50%; text-align: right;margin-left: 40%;color: #7B7B7B;">Shipping & taxes calculated at checkout</p>
+                        <p class="margin_bottom_10" style="width: 60%; text-align: right;margin-left: 30%;color: #7B7B7B;">Shipping & taxes calculated at checkout</p>
                     </div>
                     <div class="cart-total-bottom">
-                        <a href="/checkout" class="btn-back btn-checkout">{{ 'cart.general.checkout' | t }}</a>
+                        <!-- <a href="/checkout" class="btn-back btn-checkout">{{ 'cart.general.checkout' | t }}</a> -->
+                        <a href="/checkout" class="btn-back btn-checkout">Proceed to Checkout</a>
                     </div>
                   {% if section.settings.paypal_enable %}
                     <div class="sign-in-divider">

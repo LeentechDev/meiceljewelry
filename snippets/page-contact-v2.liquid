@@ -86,8 +86,11 @@
   </div>
 </div>
 {% endif %}
-<div class="e-contact">  
+<!-- <div class="e-contact">  
   <div id="googlemap1" class="map"></div>
+</div> -->
+<div class="e-contact">  
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d482.62377901401214!2d121.04737643164296!3d14.599632253710777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c82797f76cd5%3A0x21c7b579d4ab0523!2sMeicel%20Jewelry!5e0!3m2!1sfil!2sph!4v1588899117759!5m2!1sfil!2sph" width="1920" height="1080" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 </div>
 <div class="container e-contact  space_top_30">       
   <div class="row flex-center">
@@ -95,7 +98,9 @@
 
       {% form 'contact' %}
 
-      {% if form.posted_successfully? %}
+      <div class="info space_bot_50">
+        <h3 class="space_bot_20 text-center">{{section.settings.title_form}}</h3>
+        {% if form.posted_successfully? %}
       <div class="alert alert-success alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <p style="margin-bottom: 5px;">
@@ -105,32 +110,29 @@
       {% endif %}
 
       {% if form.errors %}
-      <div class="alert alert-success alert-dismissible" role="alert">
+      <div class="alert alert-danger alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <!-- {{ form.errors.size }} or {{ form.errors | size }} -->
-        <p style="margin-bottom: 5px;">Your contact form has {{ form.errors | size | pluralize: "an error", "a few errors" }}. To submit your form, make the following changes and try again:</p>
         {% for field in form.errors %}
-        <p style="margin-bottom: 5px;">The {{ field | capitalize | replace: 'Body', 'Message' }} field {{ form.errors.messages[field] }}.</p>
+          <p style="margin-bottom: 5px;">The {{ field }} field {{ form.errors.messages[field] }}.</p>
         {% endfor %}
       </div>
       {% endif %}
-      <div class="info space_bot_50">
-        <h3 class="space_bot_20 text-center">{{section.settings.title_form}}</h3>
         <p class="lh-30 text-center">{{section.settings.text_form}}</p>
       </div>
       <div class="login-form">
         <div class="form-group row ">
           <div class=" col-sm-6 col-md-6 col-xs-12">
-            <input type="text" id="author" class=" form-control bdr" name="contact[author]" value="" placeholder="{{section.settings.abus_contact_input1_name}}">
+            <input type="text" id="author" class="contact-input form-control bdr {% if form.errors contains 'author' %}input--error{% endif %}" name="contact[author]" value="" placeholder="{{section.settings.abus_contact_input1_name}}">
           </div>
           <div class=" col-sm-6 col-md-6 col-xs-12">
-            <input type="email" id="email" class=" col-sm-6 col-md-6 col-xs-12 form-control bdr" name="contact[email]" value="" placeholder="{{section.settings.abus_contact_input2_name}}">
+            <input type="email" id="email" class="contact-input col-sm-6 col-md-6 col-xs-12 form-control bdr {% if form.errors contains 'email' %}input--error{% endif %}" name="contact[email]" value="" placeholder="{{section.settings.abus_contact_input2_name}}">
           </div>
           <div class=" col-sm-12 col-md-12 col-xs-12">
-            <input type="email" id="email" class=" col-sm-6 col-md-6 col-xs-12 form-control bdr" name="contact[email]" value="" placeholder="{{section.settings.abus_contact_input4_name}}">
+            <input type="text" id="subject" class="contact-input col-sm-6 col-md-6 col-xs-12 form-control bdr {% if form.errors contains 'subject' %}input--error{% endif %}" name="contact[subject]" value="" placeholder="{{section.settings.abus_contact_input4_name}}">
           </div>
           <div class=" col-sm-12 col-md-12 col-xs-12">
-            <textarea id="message" class="form-control bdr" name="contact[body]" rows="10" placeholder="What do you want to talk about?*"></textarea>
+            <textarea id="message" class="contact-input form-control bdr {% if form.errors contains 'body' %}input--error{% endif %}" name="contact[body]" rows="10" placeholder="What do you want to talk about?*"></textarea>
           </div>
         </div>
         <div class="form-group">
@@ -142,5 +144,4 @@
       {% endform %}
     </div>
   </div>
-
 </div>

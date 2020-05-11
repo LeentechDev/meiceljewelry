@@ -21,7 +21,7 @@
                             <a class="uppercase fz-12 author" href="{{ blog.url }}/tagged/{{ tag | handle }}" rel="category tag">{{ tag }}</a>{% unless forloop.last %},{% endunless %}
                             {% endfor %}
                         </div>
-                        <h3 class="blog-post-title v2"><a href="{{ article.url }}">{{ article.title }}</a></h3>
+                        <h3 class="blog-post-title promos-inner v2"><a href="{{ article.url }}">{{ article.title }}</a></h3>
                     </div>
                 </div>
                 {% if article.image %}
@@ -49,35 +49,35 @@
                       {% assign collection_handle = collection.handle %}
                         <div class="promo-product-holder">
                           {% for product in collections[collection_handle].products limit: 4 %}
-                            <a href="{{ product.url }}">
                             <div class="collection-product-holder">
                               <div class="collection-product-img">
-                                <img src="{{ product.images[0] | img_url: '1920x1080' }}" class="product-img-catalog"/>
+                                <a href="{{ product.url }}">
+                                  <img src="{{ product.images[0] | img_url: '1920x1080' }}" class="product-img-catalog"/>
+                                </a>
                               </div>
                               <div class="collection-product-info margin_top_20">
                                 {% assign productDes = product.description | split: '<!-- break -->' %}
-                                <p>Item Code: <strong>{{ product.title }} | {{ product.price | money }} only</strong></p>
+                                <p>Item Code: <span>{{ product.title }} | {{ product.price | money }} only</span></p>
                                 <p class="margin_top_10">Ring Details:
-                                  <strong>
+                                  <span>
                                     {% if productDes[3] != blank %}
-                                      <strong>{{ productDes[3] }}</strong>
+                                      <span>{{ productDes[3] }}</span>
                                     {% else %}
-                                      <strong> There is no details.</strong>
+                                      <span> There is no details.</span>
                                     {% endif %}
-                                  </strong>
+                                  </span>
                                 </p>
                                 <p class="margin_top_10">Available Sizes: 
                                   {% for product_option in product.options_with_values %}
                                   {% if product_option.name == 'Sizes' or product_option.name == 'sizes' or product_option.name == 'size' or product_option.name == 'Size' %}
                                     {% for value in product_option.values %}
-                                      <strong>{{ value | join: ','}}</strong>
+                                      <span>{{ value | join: ','}}</span>
                                     {% endfor %}
                                   {% endif %}
                                   {% endfor %}
                                 </p>
                               </div>
                               </div>
-                            </a>
                           {% endfor %}
                         </div>
                     {% endif %}

@@ -12,7 +12,7 @@ Just like blog.liquid page, define how many comments should be on each page.
     
     <div class="blog-comment-content">
         {% if article.comments_count > 0 %}
-        <div class="cmt-title text-center margin_bottom_30"><h3 class="">{{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }} ({{article.comments_count}})</h3></div>
+        <div class="cmt-title margin_bottom_30"><h3 class="">{{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }} ({{article.comments_count}})</h3></div>
         {% endif %}
         {% if comment and comment.created_at %}
           <div class="alert alert-success alert-dismissible" role="alert">
@@ -52,17 +52,17 @@ Just like blog.liquid page, define how many comments should be on each page.
                   <div class="form-group">
                       <div class="row">
                           <div class="col-md-6 col-xs-12">
-                              <input type="text" id="author" class="form-control bdr" name="comment[author]" value="{{ form.author }}" placeholder="{{ 'blogs.comments.name' | t }}">
+                              <input type="text" id="author" class="form-control bdr" name="comment[author]" value="{{ form.author }}" placeholder="{{ 'blogs.comments.name' | t }}" required>
                           </div>
                           <div class="col-md-6 col-xs-12">
-                              <input type="email" id="email" class="form-control bdr" name="comment[email]" value="{{ form.email }}" placeholder="{{ 'blogs.comments.email' | t }}">
+                              <input type="email" id="email" class="form-control bdr" name="comment[email]" value="{{ form.email }}" placeholder="{{ 'blogs.comments.email' | t }}" required>
                           </div>
                       </div>
                   </div>
                   <div class="form-group">
                       <div class="row">
                           <div class="col-md-12">
-                              <textarea id="message" class="form-control" name="comment[body]" rows="12" placeholder="{{ 'blogs.comments.message' | t }}">{{form.body}}</textarea>
+                              <textarea id="message" class="form-control" name="comment[body]" rows="12" placeholder="{{ 'blogs.comments.message' | t }}" required>{{form.body}}</textarea>
                           </div>
                       </div>
                   </div>

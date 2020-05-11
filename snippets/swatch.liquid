@@ -43,7 +43,7 @@
 {% else %}
 <div class="maxus-productdetail__options{% unless section.settings.spd_style == "pd_style2" %} {% endunless %}">
   <div class="swatch clearfix {% if settings.po_style == "po_swatchs" %} align-center flex{% endif %}" data-option-index="{{ option_index }}">
-    <p class="swatch-label text-uppercase">{% if variantsswatch == 'Metal'  %}{{  variantsswatch }} :{% else %}{{  variantsswatch }}{% endif %}</p>
+    <p class="swatch-label text-uppercase">{{  variantsswatch }}</p>
     {% assign values = '' %}
     
     {% for variant in product.variants %}

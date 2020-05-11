@@ -15,12 +15,8 @@
           {% capture btn_name %}btn_name_{{i}}{% endcapture %}
           <div class="col relative collection h-banner-right-img" onmouseover="this.style.backgroundImage='url({{section.settings[imghover] | img_url:'master'}})';" onmouseout="this.style.backgroundImage='url({{section.settings[img] | img_url:'master'}})';" style="background-image: url('{{section.settings[img] | img_url:'master'}}');">
             <a href="{{section.settings[url]}}" class="inline-block relative  {% if section.settings.enable_overlay %}overlay_banner{% endif %} over-hidden">
-              <!-- <img src="{{section.settings[img] | img_url:'master'}}" 
-              onmouseover="this.src='{{section.settings[imghover] | img_url:'master'}}'"
-              onmouseout="this.src='{{section.settings[img] | img_url:'master'}}'"
-              class="img-responsive hover-zoom-out"> -->
             <div class="absolute text_collection">
-              <h4 class=" {% if section.settings[local_text] == 'center' %} text-center {% elsif section.settings[local_text] == 'left' %} text-left {% elsif section.settings[local_text] == 'right' %} text-right {% endif %}">{{section.settings[title]}}</h4>
+              <h2 class=" {% if section.settings[local_text] == 'center' %} text-center {% elsif section.settings[local_text] == 'left' %} text-left {% elsif section.settings[local_text] == 'right' %} text-right {% endif %}">{{section.settings[title]}}</h2>
               <div class=" over-hidden {% if section.settings[local_text] == 'center' %} text-center {% elsif section.settings[local_text] == 'left' %} text-left {% elsif section.settings[local_text] == 'right' %} text-right {% endif %}"><a href="{{section.settings[url]}}" class="h-collection-btn inline-block over-hidden">{{section.settings[btn_name]}}</a></div>
             </div>
             </a>
@@ -30,12 +26,7 @@
       </div>
 <!--        -->
       <div class="col relative banner-collection h-banner-left-img" onmouseover="this.style.backgroundImage='url({{section.settings.img_banner_hover | img_url:'master'}})';" onmouseout="this.style.backgroundImage='url({{section.settings.img_banner | img_url:'master'}})';" style="background-image: url('{{section.settings.img_banner | img_url:'master'}}');">
-        <a href="{{section.settings.url_banner}}" class="inline-block relative over-hidden">
-          <!-- <img src="{{section.settings.img_banner | img_url:'master'}}" 
-          onmouseover="this.src='//cdn.shopify.com/s/files/1/0268/5534/2163/files/Wedding_Rings.png?v=1586131246'"
-          onmouseout="this.src='{{section.settings.img_banner | img_url:'master'}}'"
-          class="img-responsive hover-zoom-out"> -->
-        
+        <a href="{{section.settings.url_banner}}" class="inline-block relative over-hidden">  
         <div class="absolute text_collection">
           <h2 class="lt-2 {% if section.settings.local_text_banner == 'center' %} text-center {% elsif section.settings.local_text_banner == 'left' %} text-left {% elsif section.settings.local_text_banner == 'right' %} text-right {% endif %}">{{section.settings.title_banner}}</h2>
           <div class=" over-hidden {% if section.settings.local_text_banner == 'center' %} text-center {% elsif section.settings.local_text_banner == 'left' %} text-left {% elsif section.settings.local_text_banner == 'right' %} text-right {% endif %}" style="margin-top: 20px;"><a href="{{section.settings.url_banner}}" class="h-collection-btn inline-block over-hidden relative">{{section.settings.btn_name_banner}}</a></div>
