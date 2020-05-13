@@ -45,7 +45,10 @@ For info on test orders:
                               <div class="product-info">
                                 <a href="{{ item.url }}">{{ item.product.title }}</a>
                                 {% unless item.variant.title contains 'Default' %}
-                                <small style="display: block;font-weight: 300;font-size: 12px;letter-spacing: 1px;margin-bottom: 5px;">{{ item.variant.title }}</small>
+                                <small style="display: block;font-weight: 300;font-size: 12px;letter-spacing: 1px;line-height: 18px;color: #7B7B7B; text-transform: uppercase; margin-bottom: 5px;">
+                                  {% assign items_variant = item.variant.title | split: '/' %}
+                                  {{ items_variant | join: ', ' }}
+                                </small>
                                 {% endunless %}
                                 {% if settings.cart_vendor_enable %}
                                 <p>{{ item.vendor }}</p>

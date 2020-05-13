@@ -12,8 +12,8 @@
     
     	<div class="cart-list-heading">
       		<span class="close-menu-mobile js-close"></span>
-      		<h3 class="cart-title">Your Cart</h3>
-      		<span class="minicart-number-items relative">{{#items}}<span class="absolute">{{item_count}}</span>{{/items}}</span>
+      		<h4 class="cart-title">Your Cart</h4>
+      		<span class="minicart-number-items enj-cartcount">{{#items}}<span class="absolute">{{item_count}}</span>{{/items}}</span>
   		</div>
         
       <div class="cart-inside">
@@ -28,11 +28,14 @@
                 </a>
             </div> 
             <!-- .product-mini__img -->
-            <div class="product-details">
+            <div class="product-details" style="width: 100%;">
             	<div class="inner-left">
                   <div class="product-name"><a href="{{url}}" tabindex="0">{{name}}</a>
                   {{#if variation}}
-                        <span class="ajaxcart__product-meta">{{variation}}</span>
+                        <!-- <span class="ajaxcart__product-meta">{{variation}}</span> -->
+                        <div class="cart-variant-holder">
+                          {{variation}}
+                        </div>
                       {{/if}}
                       {{#properties}}
                         {{#each this}}

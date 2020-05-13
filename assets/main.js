@@ -1388,7 +1388,21 @@ for (i = 0; i < acc.length; i++) {
   $('.banner-close-btn').on('click', function(){
     $('.topbar').css('display','none');
   });
+  $('#comment-submit').on('click', function (e){
+    var auth = $('#author').val();
+    var email = $('#email').val();
+    var message = $('#message').val();
+    if (auth == "" || email == "" || message == "") {
+      $('.cmt-title').after('<div class="alert alert-danger">Please fill all the input!</div>');
+    }
+    else {
+      $('.cmt-title').after('<div class="alert alert-success">Your comment successfully posted. We will review it before posting. Thank You!</div>');
+    }
+    e.preventDefault();
+  });
+
 });
+
 
 
 

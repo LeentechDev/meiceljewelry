@@ -42,7 +42,7 @@ Documentation - http://docs.shopify.com/support/your-website/navigation/creating
   	{% endif %}
 
   {% elsif template == 'article' %}
-    <li class="trail-item active">
+    <li class="trail-item">
       {{ blog.title | link_to: blog.url }}
     </li>
     <li class="trail-item trail-end">{{ article.title }}</li>

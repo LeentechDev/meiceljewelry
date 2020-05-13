@@ -25,7 +25,7 @@ If you do, the pagination of results will be broken.
 {% endcomment %}
 {% paginate search.results by 12 %}
 <section>
-  <div class="container container-240">
+  <div class="container container-240 margin_top_20">
     <div class="pt-65 pb-30">
       
         {% include 'breadcrumb' %}
@@ -37,14 +37,14 @@ If you do, the pagination of results will be broken.
 <h1 class="sr-only">{{page.title}}</h1>
 <section>
   <div class="container container-240">
-    <div class="margin_top_100 margin_bottom_100">
+    <div class="margin_top_50 margin_bottom_50">
       <div class="maxus-titlebox">
-        <div class="text-center">
+        <div class="">
           <h2 class="maxus-titlebox__title h1 font-300 fz-60">{{page.title}}</h2>
           
           {% if search.performed %}
           {% if search.results_count == 0 %}
-          <div class="search-noresult-container">
+          <div class="search-noresult-container text-center">
             <div class="search-noresult-img">
               <img src="{{ 'search1.png' | asset_url }}" alt="" class="search-img">
             </div>
@@ -90,11 +90,14 @@ If you do, the pagination of results will be broken.
           </div>
           
           {% if paginate.pages > 1 %}
-          <div class="text-center border-top pb-185">
+          <div class="text-center pb-185">
             <nav class="pagination font-700">   
               {{ paginate | default_pagination | replace: '&laquo; Previous', '<i class="fa fa-chevron-left"></i>' | replace: 'Next &raquo;', '<i class="fa fa-chevron-right"></i>' }}
             </nav>
           </div>
+          <!-- <div class="text-center">
+          {% include 'pagination' %}
+          </div> -->
           {% endif %}
         </section>
       </main>

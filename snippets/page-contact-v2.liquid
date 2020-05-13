@@ -98,7 +98,7 @@
 
       {% form 'contact' %}
 
-      <div class="info space_bot_50">
+      <div class="info space_bot_10">
         <h3 class="space_bot_20 text-center">{{section.settings.title_form}}</h3>
         {% if form.posted_successfully? %}
       <div class="alert alert-success alert-dismissible" role="alert">
@@ -132,7 +132,7 @@
             <input type="text" id="subject" class="contact-input col-sm-6 col-md-6 col-xs-12 form-control bdr {% if form.errors contains 'subject' %}input--error{% endif %}" name="contact[subject]" value="" placeholder="{{section.settings.abus_contact_input4_name}}">
           </div>
           <div class=" col-sm-12 col-md-12 col-xs-12">
-            <textarea id="message" class="contact-input form-control bdr {% if form.errors contains 'body' %}input--error{% endif %}" name="contact[body]" rows="10" placeholder="What do you want to talk about?*"></textarea>
+            <textarea id="message" class="contact-input form-control bdr {% if form.errors contains 'body' %}input--error{% endif %}" name="contact[body]" rows="10" placeholder="What do you want to talk about?*" required></textarea>
           </div>
         </div>
         <div class="form-group">

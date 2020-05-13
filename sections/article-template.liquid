@@ -1,7 +1,7 @@
 <!-- /sections/article-template.liquid -->
 <div class="about-us-banner" style="background-image: url('{{section.settings.img_banner | img_url:'master'}}');">
   <div class="about-us-title">
-    <h1 class="text-center">Promos</h1>
+    <h1 class="text-center margin_bottom_20">Promos</h1>
     <div class="text-center">
       {% include 'breadcrumb' %}
     </div>
@@ -53,6 +53,7 @@
                               <div class="collection-product-img">
                                 <a href="{{ product.url }}">
                                   <img src="{{ product.images[0] | img_url: '1920x1080' }}" class="product-img-catalog"/>
+                                  <div class="product-collection-overlay"></div>
                                 </a>
                               </div>
                               <div class="collection-product-info margin_top_20">

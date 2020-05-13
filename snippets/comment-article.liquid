@@ -47,22 +47,42 @@ Just like blog.liquid page, define how many comments should be on each page.
     <div class="blog-comment-bottom">
         <div class="cmt-title "><h3 class="margin_bottom_20">{{ section.settings.cmt_title }}</h3></div>
         {% form 'new_comment', article %}
+        <div class="info space_bot_10">
+            <h3 class="space_bot_20 text-center">{{section.settings.title_form}}</h3>
+            {% if form.posted_successfully? %}
+          <div class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <p style="margin-bottom: 5px;">
+              <!-- {{ 'contact.form.post_success' | t }} -->
+              Thank you for submitting a comment! We'll review it before posting it.
+            </p>
+          </div>
+          {% endif %}
+
+          {% if form.errors %}
+            <div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            {% for field in form.errors %}
+                <p style="margin-bottom: 5px;">The {{ field }} field {{ form.errors.messages[field] }}.</p>
+            {% endfor %}
+            </div>
+        {% endif %}
         <div class="cmt-form">
             <div class="login-form">
                   <div class="form-group">
                       <div class="row">
                           <div class="col-md-6 col-xs-12">
-                              <input type="text" id="author" class="form-control bdr" name="comment[author]" value="{{ form.author }}" placeholder="{{ 'blogs.comments.name' | t }}" required>
+                              <input type="text" id="author" class="form-control bdr {% if form.errors contains 'author' %}input--error{% endif %}" name="comment[author]" value="{{ form.author }}" placeholder="{{ 'blogs.comments.name' | t }}">
                           </div>
                           <div class="col-md-6 col-xs-12">
-                              <input type="email" id="email" class="form-control bdr" name="comment[email]" value="{{ form.email }}" placeholder="{{ 'blogs.comments.email' | t }}" required>
+                              <input type="email" id="email" class="form-control bdr {% if form.errors contains 'email' %}input--error{% endif %}" name="comment[email]" value="{{ form.email }}" placeholder="{{ 'blogs.comments.email' | t }}">
                           </div>
                       </div>
                   </div>
                   <div class="form-group">
                       <div class="row">
                           <div class="col-md-12">
-                              <textarea id="message" class="form-control" name="comment[body]" rows="12" placeholder="{{ 'blogs.comments.message' | t }}" required>{{form.body}}</textarea>
+                              <textarea id="message" class="form-control {% if form.errors contains 'body' %}input--error{% endif %}" name="comment[body]" rows="12" placeholder="{{ 'blogs.comments.message' | t }}">{{form.body}}</textarea>
                           </div>
                       </div>
                   </div>

@@ -20,7 +20,7 @@ More information:
                 <div class="wrp-element">
                     <span class="name">{{ comment.author }}</span>
                </div>
-                <span class="date">{{ comment.created_at | time_tag  }}</span>
+                <span class="date">{{ comment.created_at | date: format: 'long' }}</span>
             </div>
             <p>{{ comment.content }}</p>
 

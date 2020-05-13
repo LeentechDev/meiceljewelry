@@ -18,7 +18,7 @@
         <p class="margin_top_20">Sign in your account.</p>
         {% form 'customer_login' %}
           {{ form.errors | default_errors }}
-            <div class="margin_top_30">
+            <div class="margin_top_10">
             <div class="login-form">
               <div class="form-group account-input">
                 <input type="email" class="account-input-value bdr {% if form.errors contains 'email' %}input--error{% endif %} margin_bottom_20" name="customer[email]" placeholder="Email">
@@ -26,7 +26,7 @@
                 <input type="password" class="account-input-value bdr {% if form.errors contains 'password' %}input--error{% endif %} margin_bottom_40" name="customer[password]" placeholder="Password">
               {% endif %}
               {% if form.password_needed %}
-                <a href="#recover" class="RecoverPassword" style="color: #7B7B7B;">Forgot your password?</a>
+                <a href="#recover" class="RecoverPassword">Forgot your password?</a>
               {% endif %}
               </div>
               <div class="flex lr">
@@ -40,7 +40,16 @@
             </div>
             </div>
           {% endform %}
-          
+          <div class="or-social">
+            <div class="social-line">
+
+            </div>
+            <span>or</span>
+            <div class="social-line">
+
+            </div>
+          </div>
+          [ndnapps-sociallogin]
       </div>
       <div class="account-recovery-pass RecoverPasswordForm" style="display:none">
             <h2 class="margin_bottom_20">Recover Account</h2>
