@@ -1,7 +1,7 @@
 {% assign productDes = product.description | split: '<p>{break}</p>' %}
 <div class="single-product-tab ver3 margin_bottom_50">
-  <div class="cmt-title text-center abs">
-    <ul class="nav nav-tabs v3 text-center ">
+  <div class="cmt-title abs">
+    <ul class="nav nav-tabs v3 product-tabs">
       {%if section.settings.enable_description_tab%}
       <li class="active"><a class=" " data-toggle="tab" href="#desc">{{section.settings.destab_title}}</a></li>
       {%endif%}
@@ -12,6 +12,29 @@
       <li><a class=" " data-toggle="tab" href="#review">{{section.settings.reviewtab_title}}</a></li>
       {%endif%}
     </ul>
+    <!-- <div class="product-tabs-menu">
+      {%if section.settings.enable_description_tab%}
+        <div class="product-tabs">
+          <h1>
+            <a class=" " data-toggle="tab" href="#desc">{{section.settings.destab_title}}</a>
+          </h1>
+        </div>
+      {% endif %}
+      {% if section.settings.enable_custom_tab%}
+        <div class="product-tabs">
+          <h1>
+            <a class=" " data-toggle="tab" href="#info">{{section.settings.customtab_title}}</a>
+          </h1>
+        </div>
+      {% endif %}
+      {%if section.settings.enable_review_tab%}
+        <div class="product-tabs">
+          <h1>
+            <a class=" " data-toggle="tab" href="#review">{{section.settings.reviewtab_title}}</a>
+          </h1>
+        </div>
+      {% endif %}
+    </div> -->
   </div>
   <div class="tab-content ">
     {%if section.settings.enable_description_tab%}

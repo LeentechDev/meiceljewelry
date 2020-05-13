@@ -22,8 +22,7 @@
                 QTY : {{ item.quantity }}
               </div> -->
               <div class="cart-variant-holder" style="float: left;">
-                {% assign items_variant = item.variant.title | split: '/' %}
-                {{ items_variant | join: ', ' }}
+                {{ item.variant.title }}
               </div>
             </div>
           </div>
