@@ -258,7 +258,7 @@ var ajaxCart = (function(module, $) {
           $('.content_shop').before('<div class="container"><div class="errors qty-error product-error">'+ data.description +'</div></div>')
         }
         else {
-          $('.single-product-button-group').before('<div class="errors qty-error product-error">'+ data.description +'</div>')
+          $('.single-product-button-group').before('<div class="errors qty-error product-error">'+ urlValidator.length + data.description +'</div>')
         }
       }
     }

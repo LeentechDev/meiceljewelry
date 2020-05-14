@@ -14,7 +14,18 @@
       	<div class="blog-single-post blog-standar">
 
         {% include 'custom-blogmenu' %}
-                  <div class="blog-content col-md-pull-3 col-sm-12  col-md-9  col-xs-12">
+          <div class="blog-content col-md-pull-3 col-sm-12  col-md-9  col-xs-12">
+            {% if blog.articles_count == 0 %}
+            <div class="collection-noproduct-container">
+              <div class="collection-noproduct-img">
+                <img src="{{ 'box1.png' | asset_url }}" alt="" class="noproduct-img">
+              </div>
+              <div class="collection-noproduct">
+                <h1 class="margin_top_30 margin_bottom_30">No available promo.</h1>
+                <p>There’s no available promo for this tags at the moment.</p>
+              </div>
+            </div>
+            {% else %}
             {% for article in blog.articles %}
             <div class="blog-post-item v2  border-bot">
                 {% if article.image %}
@@ -44,6 +55,7 @@
                   {% include 'pagination' %}
                 </div>
               </div>
+            {% endif %}
             {% endif %}
         </div>
     </div>

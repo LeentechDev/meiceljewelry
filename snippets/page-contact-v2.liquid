@@ -100,30 +100,29 @@
 
       <div class="info space_bot_10">
         <h3 class="space_bot_20 text-center">{{section.settings.title_form}}</h3>
-        {% if form.posted_successfully? %}
-      <div class="alert alert-success alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <p style="margin-bottom: 5px;">
-          {{ 'contact.form.post_success' | t }}
-        </p>
-      </div>
-      {% endif %}
+            {% if form.posted_successfully? %}
+          <div class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <p style="margin-bottom: 5px;">
+              {{ 'contact.form.post_success' | t }}
+            </p>
+          </div>
+          {% endif %}
 
-      {% if form.errors %}
-      <div class="alert alert-danger alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <!-- {{ form.errors.size }} or {{ form.errors | size }} -->
-        {% for field in form.errors %}
-          <p style="margin-bottom: 5px;">The {{ field }} field {{ form.errors.messages[field] }}.</p>
-        {% endfor %}
-      </div>
-      {% endif %}
+          {% if form.errors %}
+            <div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            {% for field in form.errors %}
+                <p style="margin-bottom: 5px;">The {{ field }} field {{ form.errors.messages[field] }}.</p>
+            {% endfor %}
+            </div>
+        {% endif %}
         <p class="lh-30 text-center">{{section.settings.text_form}}</p>
       </div>
       <div class="login-form">
         <div class="form-group row ">
           <div class=" col-sm-6 col-md-6 col-xs-12">
-            <input type="text" id="author" class="contact-input form-control bdr {% if form.errors contains 'author' %}input--error{% endif %}" name="contact[author]" value="" placeholder="{{section.settings.abus_contact_input1_name}}">
+            <input type="text" id="author" class="contact-input form-control bdr {% if form.errors contains 'author' %}input--error{% endif %}" name="contact[author]" value="" placeholder="{{section.settings.abus_contact_input1_name}}" required>
           </div>
           <div class=" col-sm-6 col-md-6 col-xs-12">
             <input type="email" id="email" class="contact-input col-sm-6 col-md-6 col-xs-12 form-control bdr {% if form.errors contains 'email' %}input--error{% endif %}" name="contact[email]" value="" placeholder="{{section.settings.abus_contact_input2_name}}">

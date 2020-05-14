@@ -359,7 +359,7 @@ a.btn-slider.btn-banner5 {
         a {
             font-size: 16px;
             &:hover {
-                color: #000000 !important;
+                color: #fc3f93 !important;
             }
         }
     }
@@ -770,6 +770,11 @@ input.spr-button:hover {
                     &:first-child {
                         margin-right: 5%;
                     }
+                    &:hover {
+                        color: #fff;
+                        background: #fc3f93;
+                        border: 1px solid #fc3f93;
+                    }
                 }
             }
         }
@@ -785,6 +790,9 @@ input.spr-button:hover {
         justify-content: center;
         text-align: center  ;
         background: #FAFAFA;
+        .registration-form-holder {
+            width: 400px;
+        }
         p {
             font-size: 16px;
             line-height: 26px;
@@ -809,6 +817,7 @@ input.spr-button:hover {
             color: #fff;
             font-size: 16px;
             line-height: 26px;
+            margin: 0 auto;
             &:hover {
                 border: 1px solid #FC3F93;
                 background: #FC3F93;
@@ -863,6 +872,7 @@ input.spr-button:hover {
 .cart-list {
     .list {
         background: #fff;
+        padding: 0 45px;
     }
     .cart-title {
         text-transform: none;
@@ -900,6 +910,14 @@ input.spr-button:hover {
             font-weight: 600;
             font-size: 20px;
             line-height: 30px;
+            color: #333031;
+        }
+    }
+    .product-info {
+        a {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 24px;
             color: #333031;
         }
     }
@@ -1519,8 +1537,8 @@ li.fs-18 {
 }
 .myaccount {
     display: flex;
-    p, a {
-        line-height: 26px;
+    p {
+        margin-bottom: 10px;
     }
     .myaccount-sidenav {
         width: 30%;
@@ -1560,6 +1578,9 @@ li.fs-18 {
                         margin-top: 20px;
                         color: #FC3F93;
                     }
+                    span {
+                        color: #7B7B7B;
+                    }
                 }
             }
             .myaccount-account-orders {
@@ -1595,6 +1616,9 @@ li.fs-18 {
         }
         .address-sidenav-content {
             margin: 20px 0;
+            p {
+                margin-bottom: 10px;
+            }
         }
     }
     .address-content {
@@ -1611,6 +1635,10 @@ li.fs-18 {
                 color: #fff;
                 font-size: 18px;
                 padding: 10px 20px;
+                &:hover {
+                    color: #fff;
+                    background: #fc3f93;
+                }
             }
             .address-submit-btn {
                 background: linear-gradient(254.55deg, #FF85BB -5.06%, #FC3F93 58.76%);
@@ -1619,6 +1647,11 @@ li.fs-18 {
                 color: #fff;
                 font-size: 16px;
                 padding: 10px 20px;
+                &:hover {
+                    background: linear-gradient(112.73deg, #ff85bb -3.37%, #fc3f93 56.31%);
+                    box-shadow: 4px 4px 20px rgba(233, 135, 152, 0.6);
+                    border: none;
+                }
             }
             .address-cancel-btn {
                 background: #393D47;
@@ -1626,11 +1659,18 @@ li.fs-18 {
                 color: #fff;
                 font-size: 16px;
                 padding: 10px 20px;
+                &:hover {
+                    background: #fc3f93;
+                    color: #fff;
+                }
             }
             .address-box-content {
                 padding: 30px;
                 background-color: #F3F6FA;
                 margin-bottom: 20px;
+                p {
+                    line-height: 26px;
+                }
                 &:last-child {
                     margin-bottom: 0;
                 }
@@ -1716,11 +1756,24 @@ li.fs-18 {
     .myaccount-order-table {
         width: 70%;
         margin-right: 10%;
+        p {
+            font-size: 16px;
+            line-height: 24px;
+            color: #333031;
+        }
     }
     .myaccount-order-billing {
         width: 30%;
         background-color: #F3F6FA;
         padding: 50px;
+        .myaccount-billing-child {
+            p, h5, h4 {
+                line-height: 26px;
+            }
+            p, h5 {
+                font-size: 16px;
+            }
+        }
     }
 }
 .thead-dark {
@@ -2089,18 +2142,68 @@ li.fs-18 {
         width: 33.3%;
     }
 }
+.login-link::after {
+    content: " ";
+}
+.register-link:after {
+    content: " ";
+}
+.menu_fv3_2 {
+    a {
+        &:focus {
+            color: #fc3f93;
+        }
+    }
+}
+td.bcart-quantity.single-product-detail {
+    display: none;
+}
+.cart-mobile {
+    display: none;
+}
+a.ndn-icon.icon-facebook.cl-facebook.ndn-social-connect {
+    width: 400px;
+}
+.form-vertical {
+    input, select {
+        margin-bottom: 20px;
+    }
+}
+.mobile-topbar {
+    display: none;
+}
 @media screen and (max-width:1400px){
     .slider-home-classic .text-slider {
         bottom: 20%;
         padding: 0 100px;
+    }
+    .cart-list {
+        .list {
+            padding: 0 50px 0 20px;
+        }
     }
 }
 @media (max-width: 1299px) and (min-width: 1025px) {
     .header-v2 .topbar-right {
         display: block;
     }
+    .desktop-topbar {
+        display: none !important;
+    }
+    .mobile-topbar {
+        display: block !important;
+    }
+    .topbar-center.mobile {
+        display: block;
+    }
 }
-@media screen and (max-width:992px){
+@media screen and (max-width:1024px){
+    .desktop-topbar {
+        display: none !important;
+    }
+    .mobile-topbar {
+        display: block !important;
+    }
     .topbar-center.mobile {
         display: block;
     }
@@ -2269,6 +2372,11 @@ li.fs-18 {
             width: 90%;
         }
     }
+    .cart-list {
+        .list {
+            padding: 0 50px 0 20px;
+        }
+    }
 }
 @media screen and (max-width:425px){
     .header-v2 .topbar .topbar-promo-text {
@@ -2396,6 +2504,7 @@ li.fs-18 {
             width: 100%;
             margin-right: 0;
             overflow: scroll;
+            
         }
         .myaccount-order-billing {
             width: 100%;
@@ -2478,9 +2587,7 @@ li.fs-18 {
     .product {
         .img-product {
             .product-icon {
-                .icon-addcart {
-                    display: none;
-                }
+                display: none;
             }
         }
     }
@@ -2504,4 +2611,37 @@ li.fs-18 {
             padding: 10px 0;
         }
     }
+    .or-social {
+        margin: 20px;
+    }
+    .item_cart {
+        .total-price {
+            .price {
+                font-size: 14px;
+                line-height: 24px; 
+                font-weight: 600;
+            }
+        }
+        .product-info {
+            text-align: right;
+            max-width: 100% !important;
+            a {
+                font-size: 14px;
+                line-height: 24px;
+                font-weight: 600;
+            }
+        }
+    }
+    .cart-desktop {
+        display: none;
+    }
+    .cart-mobile {
+        display: block;
+        text-align: center;
+    }
+    a.ndn-icon.icon-facebook.cl-facebook.ndn-social-connect {
+        width: 90%;
+        min-width: 90%;
+    }
+    
 }

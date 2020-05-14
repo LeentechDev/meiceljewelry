@@ -30,7 +30,10 @@
             <!-- .product-mini__img -->
             <div class="product-details" style="width: 100%;">
             	<div class="inner-left">
-                  <div class="product-name"><a href="{{url}}" tabindex="0">{{name}}</a>
+                  <div class="product-name">
+                    <a href="{{url}}" tabindex="0">{{name}}</a>
+                  </div>
+                  <div class="product-price">{{{price}}}</div>
                   {{#if variation}}
                         <!-- <span class="ajaxcart__product-meta">{{variation}}</span> -->
                         <div class="cart-variant-holder">
@@ -44,8 +47,6 @@
                           {{/if}}
                         {{/each}}
                       {{/properties}}
-                      </div>
-                  <div class="product-price">{{{price}}}</div>
                   <!-- <div class="product-qtt">QTY : {{itemQty}}</div> -->
                   
                </div>

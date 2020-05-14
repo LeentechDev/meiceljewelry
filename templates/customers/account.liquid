@@ -28,21 +28,19 @@ For all available customer liquid tags:
           <h1>My Account</h1>
         </div>
         <div class="myaccount-sidenav-content">
-          <a href="/account">
             <p>
-              Account Details
+              <a href="/account">
+                Account Details
+              </a>
             </p>
-          </a>
-          <a href="/account/addresses">
             <p>
-              Addresses
+              <a href="/account/addresses">
+                Addresses
+              </a>
             </p>
-          </a>
-          <a href="/account/logout">
             <p>
-              Log Out
+              <a href="/account/logout">Log Out</a>
             </p>
-          </a>
         </div>
       </div>
       <div class="myaccount-content">
@@ -54,11 +52,12 @@ For all available customer liquid tags:
             {% if customer.default_address != nil %}
               <h5>{{ customer.name }}</h5>
               {% if customer.default_address.phone != blank %}
-                <p>Phone Number: {{ customer.default_address.phone }}</p>
+                <p>Phone Number: <span>{{ customer.default_address.phone }}</span></p>
               {% else %}
-                <p>Phone Number: There is no phone number.</p>
+                <p>Phone Number: <span>There is no phone number.</span></p>
               {% endif %}
               <p>Address: 
+                <span>
                 {{ customer.default_address.address1 }}
                 {% if customer.default_address.address2 != blank %}
                   , {{ customer.default_address.address2 }}
@@ -72,8 +71,9 @@ For all available customer liquid tags:
                 {% if customer.default_address.zip != blank %}
                   &nbsp;{{ customer.default_address.zip | upcase }}
                 {% endif %}
+                </span>
               </p>
-              <p>Country: {{ customer.default_address.country }}</p>
+              <p>Country: <span>{{ customer.default_address.country }}</span></p>
               <p>
               <a href="/account/addresses">
                 {{ 'customer.account.view_addresses' | t }} 

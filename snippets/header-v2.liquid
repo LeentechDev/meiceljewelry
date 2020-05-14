@@ -28,7 +28,7 @@
         <form method="get" class="searchform relative" action="/search" role="search">
           <label class="sr-only"  >search</label>
           <input type="hidden" name="type" value="product">
-          <input type="text" id="engo_autocomplate" value="{{ search.terms | escape }}" autocomplete="off" placeholder="Search for keywords" aria-label="{{ 'general.search.placeholder' | t }}" name="q" />
+          <input type="text" id="engo_autocomplate" value="{{ search.terms | escape }}" autocomplete="off" placeholder="Search for an items" aria-label="{{ 'general.search.placeholder' | t }}" name="q" />
           <button type="button" class="submit absolute"><i class="{{ settings.icon-search }} fz-16" aria-hidden="true"></i></button>
         </form>
       </div>

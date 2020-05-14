@@ -14,11 +14,10 @@
 
 <hr class="hr--small">
 
-<p><a href="/account">{{ 'customer.account.return' | t }}</a></p>
+<p class="margin_bottom_20"><a href="/account">{{ 'customer.account.return' | t }}</a></p>
 <div class="myaccount-order-content">
   <div class="myaccount-order-table">
-    <h4>{{ 'customer.order.title' | t: name: order.name }}</h4>
-
+    <p>{{ 'customer.order.title' | t: name: order.name }}</p>
     <p>{{ 'customer.order.date' | t: date: order.created_at | date: "%B %d, %Y %I:%M%p" }}</p>
 
     {% if order.cancelled %}
@@ -101,12 +100,12 @@
 
   <div class="myaccount-order-billing">
     <div class="myaccount-billing-child">
-    <h4>{{ 'customer.order.billing_address' | t }}</h4>
+    <h4 class="fw-600">{{ 'customer.order.billing_address' | t }}</h4>
 
     <p><strong>{{ 'customer.order.payment_status' | t }}:</strong> {{ order.financial_status_label }}</p>
 
     <h5>{{ order.billing_address.name }}</h5>
-    <p>
+    <p class="margin_bottom_20">
       {% if order.billing_address.company != '' %}
         {{ order.billing_address.company }}<br>
       {% endif %}
@@ -120,7 +119,7 @@
       {{ order.billing_address.phone }}
     </p>
 
-    <h4>{{ 'customer.order.shipping_address' | t }}</h4>
+    <h4 class="fw-600">{{ 'customer.order.shipping_address' | t }}</h4>
 
     <p><strong>{{ 'customer.order.fulfillment_status' | t }}:</strong> {{ order.fulfillment_status_label }}</p>
 

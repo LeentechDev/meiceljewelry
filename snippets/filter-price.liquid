@@ -8,6 +8,7 @@
         {% assign tag_value = tag | handleize %}
         <li class="cat-item{% if current_tags contains tag %} current-cat{% endif %}">
           <input type="checkbox" value="{{ tag_value | split: '|' | first }}" {% if current_tags contains tag %}checked{% endif %}/>
+          <input type="text" id="priceIdentifier" value="Price">
           <a href="javascript:void(0)" title="{{tag}}">{{tag}}</a>
         </li>
         {% endfor %}

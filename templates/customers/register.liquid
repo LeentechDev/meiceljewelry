@@ -5,7 +5,9 @@
         <h2>Register</h2>
         <p class="margin_top_20">Create your very own account.</p>
         {% form 'create_customer' %}
-          {{ form.errors | default_errors }}
+          <div class="registration-form-holder">
+            {{ form.errors | default_errors }}
+          </div>  
           <div class="login-form margin_top_20"> 
               <div class="form-group account-input">
                   <input type="text" class="account-input-value bdr {% if form.errors contains 'first_name' %}input--error{% endif %} margin_bottom_20" name="customer[first_name]" class="{% if form.errors contains 'first_name' %} input--error{% endif %}" {% if form.first_name %} value="{{ form.first_name }}"{% endif %} autocorrect="off" autocapitalize="off" placeholder="First Name">

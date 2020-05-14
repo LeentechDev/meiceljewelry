@@ -17,7 +17,7 @@ For info on test orders:
 
 <!--main content-->
         <div class="container container-240">
-          <div class="margin_top_20">
+          <div class="margin_top_20 cart-desktop">
             {% include 'breadcrumb' %}
           </div>
             <div class="checkout">
@@ -25,7 +25,11 @@ For info on test orders:
                 {% if cart.item_count > 0 %}
                 <form action="/cart" method="post" novalidate>
 		<div class="row">
-          <h3 class="margin_top_20 margin_bottom_20" style="padding-left: 20px;">{{ 'cart.general.title' | t }}</h3>
+          <h3 class="margin_top_20 margin_bottom_20 cart-desktop" style="padding-left: 20px;">{{ 'cart.general.title' | t }}</h3>
+          <div class="margin_top_30 cart-mobile">
+            <h1 class="margin_bottom_20">{{ 'cart.general.title' | t }}</h1>
+            {% include 'breadcrumb' %}
+          </div>
             <div class="col-md-8 col-sm-12 col-xs-12">
                 <div class="shopping-cart bd-7">
                     <div class="cmt-title text-center abs">
@@ -45,9 +49,8 @@ For info on test orders:
                               <div class="product-info">
                                 <a href="{{ item.url }}">{{ item.product.title }}</a>
                                 {% unless item.variant.title contains 'Default' %}
-                                <small style="display: block;font-weight: 300;font-size: 12px;letter-spacing: 1px;line-height: 18px;color: #7B7B7B; text-transform: uppercase; margin-bottom: 5px;">
-                                  {% assign items_variant = item.variant.title | split: '/' %}
-                                  {{ items_variant | join: ', ' }}
+                                <small style="display: block;font-weight: 300;font-size: 12px;line-height: 18px;color: #7B7B7B; text-transform: uppercase; margin-bottom: 5px;">
+                                  {{ item.variant.title }}
                                 </small>
                                 {% endunless %}
                                 {% if settings.cart_vendor_enable %}
