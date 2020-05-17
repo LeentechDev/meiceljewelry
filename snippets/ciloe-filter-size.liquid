@@ -4,13 +4,13 @@
   </div>
   <ul>
     {% assign tags = section.settings.shop_by_size_list_tags | split: ',' %}
-
+    {% assign arrayList = collection.all_tags | join: " " %}
     {% for t in tags %}
     {% assign tag = t | strip %}
     {% assign tag_value = tag | handleize %}
     <li class="inline-block cat-item{% if current_tags contains tag %} current-cat{% endif %}">
       <input class="hidden" type="checkbox" value="{{ tag_value | split: '|' | first }}" {% if current_tags contains tag %}checked{% endif %}/>
-      <a href="javascript:void(0)" title="{{tag}}" class="filter_size">{{tag}}</a>
+      <a href="javascript:void(0)" class="filter_size {% if arrayList contains tag %} {% else %}link-disable{% endif %}">{{tag}}</a>
       {% endfor %}
   </ul>
 </div>

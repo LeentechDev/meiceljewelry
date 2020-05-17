@@ -10,10 +10,10 @@
 </div>
 <div class="container ">
     <div class="row">
-    <div class="blog ciloe_blog_page space_top_100">
+    <div class="blog ciloe_blog_page">
       	<div class="blog-single-post blog-standar">
 
-        {% include 'blog-sidebar' %}
+        {% include 'custom-blogmenu' %}
                   <div class="blog-content col-md-pull-3 col-sm-12  col-md-9  col-xs-12">
             {% for article in blog.articles %}
             <div class="blog-post-item v2  border-bot">
@@ -38,11 +38,13 @@
                 </div>
             </div>
             {%endfor%}
-          <div class="row">
-            <div class="col-md-12 content_pagination">
-              {% include 'pagination' %}
-            </div>
-          </div>
+            {% if paginate.pages > 1 %}
+              <div class="row">
+                <div class="col-md-12 content_pagination">
+                  {% include 'pagination' %}
+                </div>
+              </div>
+            {% endif %}
         </div>
     </div>
 </div>

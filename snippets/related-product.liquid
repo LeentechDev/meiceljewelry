@@ -1,5 +1,5 @@
 <!-- BOX TITLE -->
-{% assign products_limit = 4 %}
+{% assign products_limit = 5 %}
 
 {% if collection == null or collection.handle == 'frontpage' or collection.handle == 'all' %}
 {% assign found_a_collection = false %}
@@ -16,25 +16,32 @@
         <h3>{{section.settings.srdp_title}}</h3>
       <p class="line"></p>
     </div>
-    <div class="owl-carousel owl-theme owl-cate v2 js-owl-cate">
-        {% if collection and collection.products_count > 1 %}
-          {% assign current_product = product %}
-          {% assign current_product_found = false %}
-          {% for product in collection.products limit: products_limit %}
-          {% if product.handle == current_product.handle %}
-          {% assign current_product_found = true %}
-          {% else %}
-          {% unless current_product_found == false and forloop.last %}
-          {% include 'ciloe-product' %}
+    <div class="container content_shop">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 product_shop product-collection-grid product_full">
+          <div class="row">
+            {% if collection and collection.products_count > 1 %}
+            {% assign current_product = product %}
+            {% assign current_product_found = false %}
+            {% for product in collection.products limit: products_limit %}
+            {% if product.handle == current_product.handle %}
+            {% assign current_product_found = true %}
+            {% else %}
+            {% unless current_product_found == false and forloop.last %}
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 layout_product_shop delay05 layout_pd_5c">
+              {% include 'ciloe-product' %}
+            </div>
+            {% endunless %}
+            {% endif %}
+            {% endfor %}
+            {% else %}
 
-          {% endunless %}
-          {% endif %}
-          {% endfor %}
-          {% else %}
+            {% include 'onboarding-empty-pd-related' %}
 
-          {% include 'onboarding-empty-pd-related' %}
-
-          {% endif %}
-
+            {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 </div>

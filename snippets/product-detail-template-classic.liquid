@@ -1,3 +1,4 @@
+{% assign productDes = product.description | split: '<p>{break}</p>' %}
 <div class="space_top_50 engoj-bundle-product" style="background:{{ section.settings.bg_big_image }}">
     <div class="container space_bot_20">
       {%include 'breadcrumb'%}
@@ -97,7 +98,7 @@
                 </div>
                 {% if section.settings.show_sdes %}
                 <div class="product-description">
-                 {{product.description | split:'<!-- break -->' | first}}
+                 {{ productDes[0] }}
                 </div>
                 {% endif %}
                 {% assign current_variant = product.selected_or_first_available_variant %}
@@ -228,7 +229,7 @@
     </div>
     {% endif %}
     {% if section.settings.show_product_related %}
-    {% include 'related-product'%}
+      {% include 'related-product'%}
     {% endif %}
     {% comment %}
     

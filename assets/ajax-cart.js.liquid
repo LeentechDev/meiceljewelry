@@ -234,8 +234,9 @@ var ajaxCart = (function(module, $) {
     var $addToCart_btn = $(form).find(settings.addToCartSelector);
     $addToCart_btn.removeClass('is-adding').addClass('is-added');
     $addToCart_btn.find('.enj-loader-add-to-cart').html('<i class="fa fa-check"></i>');
-    
-    $('.product-popup').find('.product-name').html(product.title);
+    var product_title = product.title;
+    var productname = product_title.split(" ");
+    $('.product-popup').find('.product-name').html(productname[0]);
     $('.product-popup').find('.product-image img').attr('src', product.image);
 
     showPopup('.product-popup');
@@ -246,12 +247,19 @@ var ajaxCart = (function(module, $) {
   itemErrorCallback = function (XMLHttpRequest, textStatus) {
     var data = eval('(' + XMLHttpRequest.responseText + ')');
     $addToCart.removeClass('is-adding is-added');
-    $addToCart.find('.enj-loader-add-to-cart').remove();
+    $addToCart.find('.enj-loader-add-to-cart').html('<i class="fa fa-times"></i>');
 
     if (!!data.message) {
       if (data.status == 422) {
         // $formContainer.after('<div class="errors qty-error product-error">'+ data.description +'</div>')
-        $('.single-product-button-group').before('<div class="errors qty-error product-error">'+ data.description +'</div>')
+        var getUrl = window.location.pathname;
+        var urlValidator = getUrl.split("/");
+        if (urlValidator.length <= 4) {
+          $('.content_shop').before('<div class="container"><div class="errors qty-error product-error">'+ data.description +'</div></div>')
+        }
+        else {
+          $('.single-product-button-group').before('<div class="errors qty-error product-error">'+ data.description +'</div>')
+        }
       }
     }
   };
@@ -295,7 +303,8 @@ var ajaxCart = (function(module, $) {
       } else {
         var prodImg = "//cdn.shopify.com/s/assets/admin/no-image-medium-cc9732cb976dd349a0df1d39816fbcc7.gif";
       }
-
+      var splitVariant = cartItem.variant_title;
+      var variantSplitted = splitVariant.split("/");
       // Create item's data object and add to 'items' array
       item = {
         item_count:cart.item_count,
@@ -304,7 +313,7 @@ var ajaxCart = (function(module, $) {
         url: cartItem.url,
         img: prodImg,
         name: cartItem.product_title,
-        variation: cartItem.variant_title,
+        variation: variantSplitted,
         properties: cartItem.properties,
         itemAdd: cartItem.quantity + 1,
         itemMinus: cartItem.quantity - 1,

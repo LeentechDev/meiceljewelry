@@ -7,8 +7,8 @@
               {% include 'custom-about' %}
       	{% endif %}
   {% if section.settings.show_testimonial %}
-  <div class="container testimonia margin_bottom_100 " style="padding-top:70px;">
-    <p class="title-testi text-center uppercase lt-3 space_bot_50">{{section.settings.title_testi}}</p>
+  <div class="container text-center testimonia margin_bottom_100 " style="padding-top:70px;">
+    <h1 class="space_bot_50" style="font-size: 36px;line-height: 48px">{{section.settings.title_testi}}</h1>
     <div class="slick-testimonial">
       {% if section.blocks.size > 0 %}
       {% for block in section.blocks %}

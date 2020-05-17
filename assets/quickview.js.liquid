@@ -162,8 +162,9 @@
         quickview.find('.spr-badge .spr-active').css({"width": rating});
         if (quickview.find('.product-desc').length > 0) {
           var description = product.description.replace(/(<([^>]+)>)/ig, "");
-          description = description.split(" ").splice(0, 20).join(" ") + "...";
-          quickview.find('.product-desc').text(description);
+          // description = description.split(" ").splice(0, 20).join(" ") + "...";
+          description = description.split("{break}");
+          quickview.find('.product-desc').text(description[0]);
         } else {
           quickview.find('.product-desc').remove();
         }

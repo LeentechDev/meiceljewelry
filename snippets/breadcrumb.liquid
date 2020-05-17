@@ -38,7 +38,7 @@ Documentation - http://docs.shopify.com/support/your-website/navigation/creating
     </li>
   <li class=""> <a>{{ current_tags | join: " + " }}</a></li>
     {% else %}
-  <li class=""> <a>{{ blog.title }}</a></li>
+  <li class="active"> <a>{{ blog.title }}</a></li>
   	{% endif %}
 
   {% elsif template == 'article' %}
