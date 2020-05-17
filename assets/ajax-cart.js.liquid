@@ -255,10 +255,15 @@ var ajaxCart = (function(module, $) {
         var getUrl = window.location.pathname;
         var urlValidator = getUrl.split("/");
         if (urlValidator.length <= 4) {
-          $('.content_shop').before('<div class="container"><div class="errors qty-error product-error">'+ data.description +'</div></div>')
+          if (urlValidator[1] == "products") {
+            $('.single-product-button-group').before('<div class="errors qty-error product-error">'+ data.description +'</div>');
+          }
+          else {
+            $('.content_shop').before('<div class="container"><div class="errors qty-error product-error">'+ data.description +'</div></div>');
+          }
         }
         else {
-          $('.single-product-button-group').before('<div class="errors qty-error product-error">'+ urlValidator.length + data.description +'</div>')
+          $('.single-product-button-group').before('<div class="errors qty-error product-error">'+ data.description +'</div>');
         }
       }
     }

@@ -65,7 +65,6 @@ into an external JS file
                             <h4 class="margin_top_20 margin_bottom_20" style="text-transform: uppercase; font-weight: 500;">Add a new address</h4>
                         </div>
                         {% form 'customer_address', customer.new_address %}
-                        {{ form.errors | default_errors }}
                         <div class="form-login margin_top_20">
                           <div class="row">
                             <div class="col-md-6">
@@ -84,25 +83,25 @@ into an external JS file
                           <input type="text" id="AddressCompanyNew" class="form-control form-account" name="address[company]" value="{{ form.company }}" autocapitalize="words">
         
                           <label for="AddressAddress1New">House/Unit/Flr #, Bldg Name, Blk or Lot #</label>
-                          <input type="text" id="AddressAddress1New" class="form-control form-account" name="address[address1]" value="{{ form.address1 }}" autocapitalize="words" required>
-        
-                          <label for="AddressAddress2New">Barangay</label>
-                          <input type="text" id="AddressAddress2New" class="form-control form-account" name="address[address2]" value="{{ form.address2 }}" autocapitalize="words" required>
+                          <input type="text" id="AddressAddress1New" class="form-control form-account" name="address[address1]" value="{{ form.address1 }}" autocapitalize="words">
         
                           <div class="row">
+                            <div class="col-md-6">
+                              <label for="AddressAddress2New">Barangay</label>
+                              <input type="text" id="AddressAddress2New" class="form-control form-account" name="address[address2]" value="{{ form.address2 }}" autocapitalize="words" required>
+                            </div>
                             <div class="col-md-6">
                               <label for="AddressCityNew">{{ 'customer.addresses.city' | t }}</label>
                               <input type="text" id="AddressCityNew" class="form-control form-account" name="address[city]" value="{{ form.city }}" autocapitalize="words" required>
                             </div>
-        
+                            <div class="col-md-6" id="AddressProvinceContainerNew">
+                              <label for="AddressProvinceNew">{{ 'customer.addresses.province' | t }}</label>
+                              <input type="text" id="AddressProvinceNew" class="form-control form-account" name="address[province]" value="{{ form.province }}" autocapitalize="words" required>
+                            </div>
                             <div class="col-md-6">
                               <label for="AddressCountryNew">{{ 'customer.addresses.country' | t }}</label>
                               <select id="AddressCountryNew" class="form-control form-account" name="address[country]" data-default="{{ form.country }}" required>{{ country_option_tags }}</select>
                             </div>
-                          </div>
-                          <div class="grid__item" id="AddressProvinceContainerNew" style="display:none">
-                            <label for="AddressProvinceNew">{{ 'customer.addresses.province' | t }}</label>
-                            <select id="AddressProvinceNew" class="form-control form-account" name="address[province]" data-default="{{ form.province }}" required></select>
                           </div>
                           <div class="row">
                             <div class="col-md-6">
@@ -151,7 +150,7 @@ into an external JS file
                       <p>
                         {{ address.company }}<br>
                         {{ address.street }}<br>
-                        {{ address.city | capitalize }}<br>
+                        {{ address.city | capitalize }}, {{ address.province }}<br>
                         {% if address.province_code %}
                         {{ address.province_code | upcase }}<br>
                         {% endif %}
@@ -182,21 +181,24 @@ into an external JS file
         
                         <label for="AddressAddress1_{{ form.id }}">House/Unit/Flr #, Bldg Name, Blk or Lot #</label>
                         <input type="text" id="AddressAddress1_{{ form.id }}" class="form-control form-account" name="address[address1]" value="{{ form.address1 }}" autocapitalize="words">
-        
-                        <label for="AddressAddress2_{{ form.id }}">Barangay</label>
-                        <input type="text" id="AddressAddress2_{{ form.id }}" class="form-control form-account" name="address[address2]" value="{{ form.address2 }}" autocapitalize="words">
-        
-                        <label for="AddressCity_{{ form.id }}">{{ 'customer.addresses.city' | t }}</label>
-                        <input type="text" id="AddressCity_{{ form.id }}" class="form-control form-account" name="address[city]" value="{{ form.city }}" autocapitalize="words">
-        
-                        <label for="AddressCountry_{{ form.id }}">{{ 'customer.addresses.country' | t }}</label>
-                        <select id="AddressCountry_{{ form.id }}" class="form-control form-account" name="address[country]" data-default="{{ form.country }}">{{ country_option_tags }}</select>
-        
-                        <div id="AddressProvinceContainer_{{ form.id }}" style="display:none">
-                          <label for="AddressProvince_{{ form.id }}">{{ 'customer.addresses.province' | t }}</label>
-                          <select id="AddressProvince_{{ form.id }}" class="form-control form-account" name="address[province]" data-default="{{ form.province }}"></select>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label for="AddressAddress2_{{ form.id }}">Barangay</label>
+                            <input type="text" id="AddressAddress2_{{ form.id }}" class="form-control form-account" name="address[address2]" value="{{ form.address2 }}" autocapitalize="words">
+                          </div>
+                          <div class="col-md-6">
+                            <label for="AddressCity_{{ form.id }}">{{ 'customer.addresses.city' | t }}</label>
+                            <input type="text" id="AddressCity_{{ form.id }}" class="form-control form-account" name="address[city]" value="{{ form.city }}" autocapitalize="words">
+                          </div>
+                          <div class="col-md-6">
+                            <label for="">{{ 'customer.addresses.province' | t }}</label>
+                            <input type="text" id="AddressProvince_{{ form.id }}" class="form-control form-account" name="address[province]" value="{{ form.province }}" autocapitalize="words">
+                          </div>
+                          <div class="col-md-6">
+                            <label for="AddressCountry_{{ form.id }}">{{ 'customer.addresses.country' | t }}</label>
+                            <select id="AddressCountry_{{ form.id }}" class="form-control form-account" name="address[country]" data-default="{{ form.country }}">{{ country_option_tags }}</select>
+                          </div>
                         </div>
-        
                         <div class="row">
                           <div class="col-md-6">
                             <label for="AddressZip_{{ form.id }}">{{ 'customer.addresses.zip' | t }}</label>
@@ -231,15 +233,15 @@ into an external JS file
         
                     <script>
                       // Initialize observers on address selectors
-                      new Shopify.CountryProvinceSelector('AddressCountryNew', 'AddressProvinceNew', {
-                        hideElement: 'AddressProvinceContainerNew'
-                      });
+                      // new Shopify.CountryProvinceSelector('AddressCountryNew', 'AddressProvinceNew', {
+                      //   hideElement: 'AddressProvinceContainerNew'
+                      // });
                       // Setup province selector on each customer address
-                      {% for address in customer.addresses %}
-                      new Shopify.CountryProvinceSelector('AddressCountry_{{ address.id }}', 'AddressProvince_{{ address.id }}', {
-                                                          hideElement: 'AddressProvinceContainer_{{ address.id }}'}
-                                                         );
-                      {% endfor %}
+                      // {% for address in customer.addresses %}
+                      // new Shopify.CountryProvinceSelector('AddressCountry_{{ address.id }}', 'AddressProvince_{{ address.id }}', {
+                      //                                     hideElement: 'AddressProvinceContainer_{{ address.id }}'}
+                      //                                    );
+                      // {% endfor %}
                       // Modified contents of customer_area.js (global asset)
                       Shopify.CustomerAddress = {
                         toggleForm: function(id) {

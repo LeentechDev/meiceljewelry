@@ -1,4 +1,4 @@
-<div class="filter  space_bot_30  filter-tag">
+<div class="filter  space_bot_30">
   <div class="flex margin_bottom_20">
     <h4 class="fz-14 widget_title ">{{section.settings.title_price}}</h4>
   </div>
@@ -9,9 +9,10 @@
     {% assign tag = t | strip %}
     {% assign tag_value = tag | handleize %}
     <li class="cat-item{% if current_tags contains tag %} current-cat{% endif %}">
-      <input class="filtered-tag" type="checkbox" value="{{ tag_value | split: '|' | first }}" {% if current_tags contains tag %}checked{% endif %} style="display:none"/>
-      <!-- <input type="text" class="priceTag" value="price" style="display: none;" /> -->
-      <a href="javascript:void(0)">{{tag}}</a>
+      <!-- <input class="filtered-tag" type="checkbox" value="{{ tag_value | split: '|' | first }}" {% if current_tags contains tag %}checked{% endif %} style="display:none"/> -->
+      {% assign collectionValidator = collection.url | split: '/' %}
+      {% assign tagval = tag_value | split: '|' | first %}
+      <a href="{{ tagval }}" class="{% if collectionValidator[2] == tagval %}tag-active{% endif %}">{{tag}}</a>
       {% endfor %}
   </ul>
 </div>

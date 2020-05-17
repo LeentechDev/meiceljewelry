@@ -1,6 +1,6 @@
 <div class="filter margin_bottom_30 space_bot_30 border-bot filter-tag">
   <div class="flex margin_bottom_20">
-    <h4 class="fz-14 widget_title lt-2">{{section.settings.title_color}}</h4>
+    <h4 class="fz-14 widget_title">{{section.settings.title_color}}</h4>
   </div>
   <ul>
     {% assign tags = section.settings.shop_by_color_list_tags | split: ',' %}
@@ -11,9 +11,12 @@
     <li class="cat-item{% if current_tags contains tag %} current-cat{% endif %} inline-block">
       <input class="hidden" type="checkbox" value="{{ tag_value | split: '|' | first }}" {% if current_tags contains tag %}checked{% endif %}/>
       <a href="javascript:void(0)">
-        <span class="link_color">
-          <span class="ciloe_filter_color" style="background:{{tag}};"></span>
-        </span>
+        <div data-value="{{ value | escape }}"  data-style="square" class="filter-tooltip color {{ tag }}" data-toggle="tooltip" data-placement="top">
+          <div class="tooltip">{{ tag }}</div>
+          <span class="link_color">
+            <span class="ciloe_filter_color" style="background:{% if tag == 'White Gold' %}#e3e3de {% elsif tag == 'Yellow Gold' %}#fde76d {% elsif tag == 'Rose Gold' %}#ffdabb {% elsif tag == 'Platinum' %}#b8b7b2 {% else %} {{ tag }} {% endif %};"></span>
+          </span>
+        </div>
       </a>
       {% endfor %}
   </ul>

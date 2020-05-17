@@ -170,12 +170,12 @@
       {% if link.title contains '[' %}
       {%- assign label  = link.title | split: '[' | last  | split: ']' | first -%}  
       {%- assign bgc  = link.title | split: '(' | last  | split: ')' | first -%}
-      <a href="{{ link.url }}" class="parent-link delay03 ">{{link.title | split: '[' | first }}
+      <a href="{{ link.url }}" class="parent-link delay03 {% if link.active %}current{% endif %}">{{link.title | split: '[' | first }}
         {% if link.active %} <div class="current-nav"></div> {% endif %}
         <span class="absolute label_menu {% if link.title contains '('%} e-{{bgc}} {%else%} e-red {%endif%}">{{label}}</span>
       </a>
       {%else%}
-      <a href="{{ link.url }}" class="parent-link delay03 ">{{link.title | split: '[' | first }}{% if link.active %} <div class="current-nav"></div> {% endif %}</a>
+      <a href="{{ link.url }}" class="parent-link delay03 {% if link.active %}current{% endif %}">{{link.title | split: '[' | first }}{% if link.active %} <div class="current-nav"></div> {% endif %}</a>
       {%endif%}
       {% if link.links != blank %}
       <ul class="dropdown-menu">

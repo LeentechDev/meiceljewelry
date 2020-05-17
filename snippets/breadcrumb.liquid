@@ -26,7 +26,7 @@ Documentation - http://docs.shopify.com/support/your-website/navigation/creating
     <li class="trail-item">
       {{ collection.title | link_to: url }}
     </li>
-    <li class="trail-item trail-end">{{ current_tags | join: " + " }}</li>
+    <!-- <li class="trail-item trail-end">{{ current_tags | join: " + " }}</li> -->
     {% else %}
     <li class="trail-item trail-end">{{ collection.title }}</li>
     {% endif %}

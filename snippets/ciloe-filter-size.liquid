@@ -8,7 +8,7 @@
     {% for t in tags %}
     {% assign tag = t | strip %}
     {% assign tag_value = tag | handleize %}
-    <li class="inline-block cat-item{% if current_tags contains tag %} current-cat{% endif %}">
+    <li class="inline-block cat-item{% if current_tags contains tag %} current-cat{% endif %} margin_right_10">
       <input class="hidden" type="checkbox" value="{{ tag_value | split: '|' | first }}" {% if current_tags contains tag %}checked{% endif %}/>
       <a href="javascript:void(0)" class="filter_size">{{tag}}</a>
       {% endfor %}
