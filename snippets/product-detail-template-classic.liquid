@@ -13,11 +13,15 @@
     
     
               <div class="product-images">
-                <div class="main-img js-product-slider">
+                <!-- <div class="main-img js-product-slider">
                   {% for image in product.images %}
-                  <a href="#" onClick="return false;" class="effect"><img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" class="engoj_img_main img-responsive full-width"></a>
+                  <a href="#" onClick="return false;" class="effect">
+                    <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" data-zoom-image="{{ image.src | img_url: '1024x1024' }}" class="engoj_img_main img-responsive full-width ProductPhotoImg">
+                  </a>
                   {% endfor %}
-                </div>
+                </div> -->
+                {% assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image %}
+                  <img src="{{ featured_image | img_url: 'master' }}" alt="Image" data-zoom-image="{{ featured_image | img_url: '1024x1024' }}" class="ProductImage">
                 {%if section.settings.show_360%}
                 <div class="e-product-button" data-toggle="modal" data-target="#my360"><span><i class="icon-refresh" style="font-size: 18px;padding-right: 5px;transform: translateY(20%);display: inline-block;"></i>360 DEGREE</span></div>
                 {%endif%}
@@ -60,10 +64,10 @@
     
                 {% endcomment %}
                 {% if product.metafields.engo_video.video_link != blank %}
-                <div class="e-product-button"{%if section.settings.show_360%}style="right:17px; left:unset;width:140px;"{%endif%} data-fancybox href="{{product.metafields.engo_video.video_link}}"><span class="flex center"><span style="padding-top:14px;margin-right:5px;transform:scale(.8);"><img src="{{'play.png' | asset_url}}" class=" img-responsive"></span><span>PLAY VIDEO</span></span></div>
+                  <div class="e-product-button"{%if section.settings.show_360%}style="right:17px; left:unset;width:140px;"{%endif%} data-fancybox href="{{product.metafields.engo_video.video_link}}"><span class="flex center"><span style="padding-top:14px;margin-right:5px;transform:scale(.8);"><img src="{{'play.png' | asset_url}}" class=" img-responsive"></span><span>PLAY VIDEO</span></span></div>
                 {% endif %}
               </div>
-              <div class="multiple-img-list-ver2 js-click-product">
+              <!-- <div class="multiple-img-list-ver2 js-click-product">
                 {% for image in product.images %}
                 <div class="product-col">
                   <div class="engoj_img_variant img">
@@ -71,7 +75,12 @@
                   </div>
                 </div>
                 {% endfor %}
-              </div>
+              </div> -->
+              <ul class="ProductImageThumb" id="ProductImageThumb">
+                {% for image in product.images %}
+                  <li><a href="{{ image.src | img_url: 'master' }}" data-image="{{ image.src | img_url: 'master' }}" data-zoom-image="{{ image.src | img_url: '1024x1024' }}" target="product-images"><img src="{{ image.src | img_url: 'master' }}" alt=""></a></li>
+                {% endfor %}
+              </ul>
             </div>
     
     

@@ -57,12 +57,12 @@
                                 </a>
                               </div>
                               <div class="collection-product-info margin_top_20">
-                                {% assign productDes = product.description | split: '<!-- break -->' %}
+                                {% assign productDes = product.description | split: '<p>{break}</p>' %}
                                 <p>Item Code: <span>{{ product.title }} | {{ product.price | money }} only</span></p>
                                 <p class="margin_top_10">Ring Details:
                                   <span>
-                                    {% if productDes[3] != blank %}
-                                      <span>{{ productDes[3] }}</span>
+                                    {% if productDes[1] != blank %}
+                                      <span>{{ productDes[1] }}</span>
                                     {% else %}
                                       <span> There is no details.</span>
                                     {% endif %}
@@ -70,7 +70,7 @@
                                 </p>
                                 <p class="margin_top_10">Available Sizes: 
                                   {% for product_option in product.options_with_values %}
-                                  {% if product_option.name == 'Sizes' or product_option.name == 'sizes' or product_option.name == 'size' or product_option.name == 'Size' %}
+                                  {% if product_option.name == 'Sizes' or product_option.name == 'sizes' or product_option.name == 'size' or product_option.name == 'Size' or product_option.name == 'Size for Groom' or product_option.name == 'Size for Bride'%}
                                     {% for value in product_option.values %}
                                       <span>{{ value | join: ','}}</span>
                                     {% endfor %}

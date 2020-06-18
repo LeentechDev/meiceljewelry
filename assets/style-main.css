@@ -6498,7 +6498,7 @@ h1,h2,h3,h4,h5{
   position:relative;
 }
 .single-product-tab .tab-content{
-  padding: 0 0 80px;
+  padding: 0 0 0;
   text-align: center;
 }
 .single-product-tab .tab-content #review{

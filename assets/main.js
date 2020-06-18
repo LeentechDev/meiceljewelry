@@ -1,7 +1,34 @@
 jQuery(document).ready(function($) {
   "use strict";
       
+//  PRODUCT
+$('.ProductImageThumb a').click(function(e) {
+  e.preventDefault();
+  $('.product-images img').attr('src', $(this).attr('href'));
+  var imgUrl = $(this).attr('href');
+  var splitimg = imgUrl.split('.jpg');
+  var zoomImage = splitimg[0] + "_1024x1024.jpg" + splitimg[1];
+  $('.product-images img').attr('data-zoom-image', zoomImage);
+});
+$('.ProductImage').elevateZoom({
+  gallery: 'ProductImageThumb',
+  cursor: 'pointer',
+  galleryActiveClass: 'active',
+  imageCrossfade: true,
+  scrollZoom: true,
+});
+// $(window).resize(function() {
 
+//   if($(window).width() >= 992){
+//     $('#ProductImage').elevateZoom({
+//       gallery: 'ProductImageThumb',
+//       cursor: 'pointer',
+//       galleryActiveClass: 'active',
+//       imageCrossfade: true,
+//       scrollZoom: true,
+//     });
+//  }
+// });
 // counter  
 $('.counte').each(function() {
 var $this = $(this),
@@ -198,7 +225,7 @@ $('.js-pd-article').slick({
   // Js product single slider
   $('.js-click-product').slick({
       
-      slidesToShow: 4,
+      slidesToShow: 3,
       slidesToScroll: 1,
       asNavFor: '.js-product-slider',
       dots: false,
@@ -1385,5 +1412,10 @@ $('.close_sidebar_mb').on('click',function(){
 $(window).load(function(){
 $('.shopify-payment-button__button').addClass('btn-disabled');
 });
-
+// if (($(window).width()) <= 992){
+//   $('#ProductImage').elevateZoom();
+// }
+  //  if($(window).width() >= 992){
+  //     $('#ProductImage').elevateZoom();
+  //  }
 });

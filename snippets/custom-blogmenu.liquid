@@ -105,7 +105,12 @@
     <div class="blog-widget-banner blog-widget">
       <h4 class="widget-blog-title">{{section.settings.widget_tag_title}}</h4>
       {% for tag in blog.all_tags %}
-      {{ tag | link_to_add_tag: tag }}
+      <!-- {{ tag | link_to_add_tag: tag }} -->
+      {% assign tagVal = tag | handleize %}
+      {% assign blogValidator = blog.url | append: '/tagged/'| append: tagVal %}
+      {% assign blogUrlSeperator = blogValidator | split: '/' %}
+      {% assign linkValidator = value %}
+      <a href="{{ blogValidator }}" class="blog-menu-link">{{ tag }}</a>
       {% endfor %}
     </div>
     {% endif %}

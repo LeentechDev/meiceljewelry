@@ -1188,6 +1188,7 @@ li.fs-18 {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    margin-bottom: 30px;
     &:last-child {
         margin-bottom: 30px;
     }
@@ -1344,9 +1345,9 @@ li.fs-18 {
 .h-article-img {
     height: 200px;
 }
-.collection-promo-img {
-    height: 400px;
-}
+// .collection-promo-img {
+//     height: 400px;
+// }
 .blog-post-desc {
     font-size: 16px;
     line-height: 26px;
@@ -1872,6 +1873,9 @@ li.fs-18 {
                 a.tag-active {
                     color: #FC3F93;
                 }
+                a.active {
+                    color: #FC3F93;
+                }
             }
         }
     }
@@ -2226,7 +2230,80 @@ a.ndn-icon.icon-facebook.cl-facebook.ndn-social-connect {
     visibility: visible;
     transform: translateY(-10px);
 }
-@media screen and (max-width:1400px){
+.produt-sizing-guide {
+    background: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 30px;
+    a {
+        width: 100%;
+        font-size: 24px;
+        line-height: 26px;
+        color: #7b7b7b;
+        i {
+            float: right;
+        }
+    }
+    .product-size-body {
+        margin-top: 20px;
+    }
+}
+.mobile-back-nav-wrap {
+    .box-title {
+        text-transform: initial;
+    }
+}
+.ProductImageThumb {
+    width: 100px;
+    margin-right: 20px;
+    li {
+        a {
+            img {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+.faqs-question {
+    display: flex;
+    background: #F9F9F9;
+    border-left: 3px solid #FC3F93;
+    padding: 20px;
+    .faqs-icon-q {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+    }
+    .faqs-body-q {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h4 {
+            font-weight: 600;
+        }
+    }
+}
+.faqs-answer {
+    display: flex;
+    border-left: 3px solid #9B9B9B;
+    padding: 20px;
+    .faqs-icon-a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+    }
+    .faqs-body-a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span {
+            color: #7B7B7B;
+            line-height: 24px;
+        }
+    }
+}
+@media screen and (max-width: 1366px){
     .slider-home-classic .text-slider {
         bottom: 20%;
         padding: 0 100px;
@@ -2234,6 +2311,23 @@ a.ndn-icon.icon-facebook.cl-facebook.ndn-social-connect {
     .cart-list {
         .list {
             padding: 0 50px 0 20px;
+        }
+    }
+    .ProductImageThumb {
+        width: 100%;
+        margin-right: 0;
+        margin-top: 20px;
+        display: flex;
+        li {
+            margin-right: 20px;
+            &:last-child {
+                margin-right: 0;
+            }
+            a {
+                img {
+                    margin-bottom: 0;
+                }
+            }
         }
     }
 }
@@ -2311,6 +2405,8 @@ a.ndn-icon.icon-facebook.cl-facebook.ndn-social-connect {
         .h-article-mobile-header {
             display: block;
             font-size: 15px;
+            text-align: center;
+            margin-bottom: 20px;
         }
         .h-article-items {
             width: 100%;
@@ -2443,7 +2539,7 @@ a.ndn-icon.icon-facebook.cl-facebook.ndn-social-connect {
         display: none;
     }
     .footer-v4 {
-
+        padding-top: 50px;
         form button {
             width: 33%;
             margin-left: 0;
@@ -2612,6 +2708,7 @@ a.ndn-icon.icon-facebook.cl-facebook.ndn-social-connect {
         width: 100%;
     }
     .tab-content {
+        padding: 0;
         #info {
             width: 100%;
         }
@@ -2697,5 +2794,14 @@ a.ndn-icon.icon-facebook.cl-facebook.ndn-social-connect {
         width: 90%;
         min-width: 90%;
     }
-    
+    .custom-banner {
+        height: 40vh;
+        background-size: auto !important; 
+        background-position: left !important;  
+    }
+    .produt-sizing-guide {
+        .product-size-body {
+            overflow: scroll;
+        }
+    }
 }
